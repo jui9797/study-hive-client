@@ -1,58 +1,44 @@
-import { useContext, useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import DatePicker from 'react-datepicker';
+import { useParams } from 'react-router-dom';
 
-const CreateAssignments = () => {
+const UpdateAssignment = () => {
+    const { id } = useParams();
+    // console.log(id)
 
-const {user} =useContext(AuthContext)
-const [startDate, setStartDate] =useState(new Date())
+    const [assignment, setAssignment] = useState({})
+    const [startDate, setStartDate] =useState(new Date())
 
-const handleSubmit=e=>{
-    e.preventDefault()
-    const form =e.target
-    const title =form.title.value
-    const description =form.description.value
-    const marks =form.marks.value
-    const thumbnailUrl =form.thumbnailUrl.value
-    const difficulty =form.difficulty.value
-
-   // Format the date
+    // Format the date
    const dueDate = new Intl.DateTimeFormat('en-US', {
     month: '2-digit',
     day: '2-digit',
     year: 'numeric',
   }).format(startDate);
 
-    const creatorName =form.creatorName.value
-    const creatorEmail =form.creatorEmail.value
-    const assignment ={title, description, marks, thumbnailUrl, difficulty, dueDate, creatorName, creatorEmail}
-    console.log(assignment)
+    useEffect(() => {
+        axios.get(`http://localhost:5000/assignments/${id}`)
+            .then(res => {
+                console.log(res.data)
+                setAssignment(res.data)
+            })
+            .catch(error => console.log(error.message))
 
-    // post a new assignment
-    axios.post('http://localhost:5000/assignments', assignment)
-    .then(res=>{
-        console.log(res.data)
-        alert('add new assignment in database')
-    })
-    .catch((error) => {
-        console.error('Error adding assignment:', error);
-        alert('Failed to add assignment.');
-    });
-}
+    }, [id])
 
     return (
         <div>
             <div className="assignment-form-container bg-pink-300 p-4">
                 <h2 className="text-lg font-bold mb-4">Create Assignment</h2>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form  className="space-y-4">
                     {/* Title */}
                     <div>
                         <label className="block text-sm font-medium">Assignment Title</label>
                         <input
                             type="text"
                             name="title"
+                            defaultValue={assignment?.title}
                             className="border border-gray-300 rounded w-full p-2"
                             required
                         />
@@ -126,8 +112,8 @@ const handleSubmit=e=>{
                         <input
                             type="text"
                             name="creatorName"
-                            defaultValue={user && user.displayName}
-                            readOnly
+                            // defaultValue={user && user.displayName}
+                            // readOnly
                             className="border border-gray-300 rounded w-full p-2"
                             required
                         />
@@ -139,8 +125,8 @@ const handleSubmit=e=>{
                         <input
                             type="email"
                             name="creatorEmail"
-                            defaultValue={user && user.email}
-                            readOnly
+                            // defaultValue={user && user.email}
+                            // readOnly
                             className="border border-gray-300 rounded w-full p-2"
                             required
                         />
@@ -159,4 +145,4 @@ const handleSubmit=e=>{
     );
 };
 
-export default CreateAssignments;
+export default UpdateAssignment;

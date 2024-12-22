@@ -41,6 +41,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <a className=" text-xl">LOGO</a>
+                    <button className='btn'>Theme</button>
                 </div>
                 <div className='navbar-end'>
                     <div className="hidden lg:flex ">
