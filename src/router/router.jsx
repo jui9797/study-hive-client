@@ -11,6 +11,7 @@ import Register from "../pages/Register";
 import Private from "../Private/Private";
 import UpdateAssignment from "../pages/UpdateAssignment";
 import DetailsPage from "../pages/DetailsPage";
+import Submission from "../pages/Submission";
 
 const router = createBrowserRouter([
     {
@@ -39,8 +40,12 @@ const router = createBrowserRouter([
           element:<Private><DetailsPage></DetailsPage></Private>
         },
         {
+          path:'/submission/:id',
+          element:<Private><Submission></Submission></Private>
+        },
+        {
           path:'/update/:id',
-          element:<UpdateAssignment></UpdateAssignment>
+          element:<Private><UpdateAssignment></UpdateAssignment></Private>
         },
         {
           path:'/pdAssignments',

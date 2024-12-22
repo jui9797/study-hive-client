@@ -58,7 +58,7 @@ const handleDelete=(id)=>{
             <div className="card  shadow-xl p-4 bg-pink-300 rounded-none">
                 <div className='h-[300px]'>
                 
-                    <img
+                    <img referrerPolicy='no-referrer'
                         className='w-full h-full object-cover'
                         src={thumbnailUrl}
                         alt="thumbnailUrl" />
