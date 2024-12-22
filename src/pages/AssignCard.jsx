@@ -71,7 +71,7 @@ const handleDelete=(id)=>{
                     <p>Highest Marks: {marks}</p>
                     <p>Due Date: {dueDate}</p>
                     <div className="card-actions flex justify-between">
-                        <button className="btn">View Assignment</button>
+                        <Link to={`/details/${_id}`}><button className="btn">View Assignment</button></Link>
                         <div>
                         <button onClick={()=>handleDelete(_id)} className="btn mr-4 text-xl"><RiDeleteBin2Fill /></button>
                         <Link to={`/update/${_id}`}><button className="btn text-xl"><MdSystemUpdateAlt /></button></Link>

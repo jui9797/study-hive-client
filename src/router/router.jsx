@@ -10,6 +10,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Private from "../Private/Private";
 import UpdateAssignment from "../pages/UpdateAssignment";
+import DetailsPage from "../pages/DetailsPage";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         {
           path:'/assignments',
           element:<Assignments></Assignments>
+        },
+        {
+          path:'/details/:id',
+          element:<Private><DetailsPage></DetailsPage></Private>
         },
         {
           path:'/update/:id',
