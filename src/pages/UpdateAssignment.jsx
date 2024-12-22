@@ -1,37 +1,88 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const UpdateAssignment = () => {
+    const navigate = useNavigate()
+    const {user} =useContext(AuthContext)
     const { id } = useParams();
     // console.log(id)
 
     const [assignment, setAssignment] = useState({})
     const [startDate, setStartDate] =useState(new Date())
 
-    // Format the date
-   const dueDate = new Intl.DateTimeFormat('en-US', {
-    month: '2-digit',
-    day: '2-digit',
-    year: 'numeric',
-  }).format(startDate);
+    
 
     useEffect(() => {
         axios.get(`http://localhost:5000/assignments/${id}`)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setAssignment(res.data)
             })
             .catch(error => console.log(error.message))
 
     }, [id])
 
+
+    const handleUpdate=e=>{
+        e.preventDefault()
+        const form =e.target
+        const title =form.title.value
+        const description =form.description.value
+        
+        const marks =form.marks.value
+        const thumbnailUrl =form.thumbnailUrl.value
+        const difficulty =form.difficulty.value
+    // Format the date
+        const dueDate = new Intl.DateTimeFormat('en-US', {
+        month: '2-digit',
+        day: '2-digit',
+        year: 'numeric',
+       }).format(startDate);
+
+       const creatorName =form.creatorName.value
+       const creatorEmail =form.creatorEmail.value
+       const assignment ={title, description, marks, thumbnailUrl, difficulty, dueDate, creatorName, creatorEmail}
+       console.log(assignment)
+
+    //    validation of user
+    if(user.email != creatorEmail){
+        return (
+            Swal.fire({
+                            title: "Sorry",
+                            text: "You have no permission",
+                            icon: "error"
+                          })
+        )
+
+    }
+
+    // patch method 
+    axios.patch(`http://localhost:5000/assignments/${id}`, assignment)
+    .then(res=>{
+        console.log(res.data)
+        Swal.fire({
+                        title: "Great",
+                        text: "Update process is successfull",
+                        icon: "success"
+                      })
+                      navigate('/assignments');
+    })
+    .catch(error=>{
+        console.log(error.message)
+        
+    })
+
+    }
+
     return (
         <div>
             <div className="assignment-form-container bg-pink-300 p-4">
                 <h2 className="text-lg font-bold mb-4">Create Assignment</h2>
-                <form  className="space-y-4">
+                <form onSubmit ={handleUpdate} className="space-y-4">
                     {/* Title */}
                     <div>
                         <label className="block text-sm font-medium">Assignment Title</label>
@@ -49,6 +100,7 @@ const UpdateAssignment = () => {
                         <label className="block text-sm font-medium">Description</label>
                         <textarea
                             name="description"
+                            defaultValue={assignment?.description}
                             className="border border-gray-300 rounded w-full p-2"
                             rows="4"
                             required
@@ -61,6 +113,7 @@ const UpdateAssignment = () => {
                         <input
                             type="number"
                             name="marks"
+                            
                             defaultValue='50'
                             readOnly
                             className="border border-gray-300 rounded w-full p-2"
@@ -74,6 +127,7 @@ const UpdateAssignment = () => {
                         <input
                             type="url"
                             name="thumbnailUrl"
+                            defaultValue={assignment?.thumbnailUrl}
                             className="border border-gray-300 rounded w-full p-2"
                             required
                         />
@@ -84,6 +138,7 @@ const UpdateAssignment = () => {
                         <label className="block text-sm font-medium">Difficulty Level</label>
                         <select
                             name="difficulty"
+                            defaultValue={assignment?.difficulty}
                             className="border border-gray-300 rounded w-full p-2"
                             required
                         >
@@ -99,6 +154,7 @@ const UpdateAssignment = () => {
                         <DatePicker
                             dateFormat="MM/dd/yyyy"
                             selected={startDate}
+                            defaultValue={assignment?.dueDate}
                             onChange={date => setStartDate(date)}
                             className="border border-gray-300 rounded w-full p-2"
                             placeholderText="Select a due date"
@@ -112,8 +168,8 @@ const UpdateAssignment = () => {
                         <input
                             type="text"
                             name="creatorName"
-                            // defaultValue={user && user.displayName}
-                            // readOnly
+                            defaultValue={assignment?.creatorName}
+                            readOnly
                             className="border border-gray-300 rounded w-full p-2"
                             required
                         />
@@ -125,8 +181,8 @@ const UpdateAssignment = () => {
                         <input
                             type="email"
                             name="creatorEmail"
-                            // defaultValue={user && user.email}
-                            // readOnly
+                            defaultValue={assignment?.creatorEmail}
+                            readOnly
                             className="border border-gray-300 rounded w-full p-2"
                             required
                         />
