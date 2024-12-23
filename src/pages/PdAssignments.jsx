@@ -26,7 +26,9 @@ const PdAssignments = () => {
                             <tr>
                                 <th></th>
                                 <th>Title</th>
+                                <th>Status</th>
                                 <th>Highest Marks</th>
+                                <th>Obtained Marks</th>
                                 <th>Examinee Name</th>
                                 <th>Action</th>
                             </tr>
@@ -38,7 +40,9 @@ const PdAssignments = () => {
                                     <tr key={index}>
                                 <th>{index+1}</th>
                                 <td>{item.title}</td>
+                                <td>{item.status}</td>
                                 <td>{item.marks}</td>
+                                <td>{item.obtainedMarks}</td>
                                 <td>{item.submittedUserName}</td>
                                 <td><Link to={`/marks/${item._id}`}><button className='btn'>Give Mark</button></Link></td>
                             </tr>

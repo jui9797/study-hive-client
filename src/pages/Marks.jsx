@@ -1,10 +1,12 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Marks = () => {
     const { id } = useParams()
-
+    const {user} = useContext(AuthContext)
+    
     const [assignment, setAssignment] = useState({})
 
     useEffect(() => {
@@ -15,6 +17,16 @@ const Marks = () => {
             })
             .catch(error => console.log(error))
     }, [id])
+
+    const handleFeedback=e=>{
+        e.preventDefault()
+        const mark =e.target.mark.value
+        const feedback =e.target.feedback.value
+        console.log(mark, feedback)
+        if(assignment.submittedUserEmail === user.email){
+            return alert('You cannot examine your own assignment')
+        }
+    }
 
     return (
         <div>
@@ -29,13 +41,17 @@ const Marks = () => {
                 </a>
             </p>
             <p> Note: {assignment.note}</p>
-            <form className='border-2 p-4 flex flex-col w-1/2 lg:w-1/4'>
+            <form onSubmit={handleFeedback} className='border-2 p-4 flex flex-col w-1/2 lg:w-1/4'>
                 <input
                     type="number"
+                    name='mark'
+                    required
                     placeholder="Give Number"
                     className="input input-bordered input-md w-full max-w-xs my-4" />
                 <input
                     type="text"
+                    name='feedback'
+                    required
                     placeholder="Give a feedback"
                     className="input input-bordered input-md w-full max-w-xs" />
                 <button className='btn mt-4'>Submit</button>

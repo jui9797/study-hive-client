@@ -1,22 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AssignmentCard = ({assign}) => {
     const {_id, title, thumbnailUrl, dueDate, difficulty} = assign || {}
     return (
         <div>
             <div className="card bg-base-100 shadow-xl">
-                <figure>
+                <div >
                     <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    className='h-[300px] object-cover w-full'
+                        src={thumbnailUrl}
                         alt="Shoes" />
-                </figure>
+                </div>
                 <div className="card-body">
                     <h2 className="card-title">{title}</h2>
                     <p> Due Date:{dueDate}</p>
                     <p>Type: {difficulty}</p>
                     
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
+                    <div className="card-actions">
+                    <Link to={`/details/${_id}`}><button className="btn">View Assignment</button></Link>
                     </div>
                 </div>
             </div>

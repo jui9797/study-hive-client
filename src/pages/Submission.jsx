@@ -35,6 +35,11 @@ const handleSubmit=e=>{
  const submitData ={url, note, submittedUserEmail, creatorUserEmail, submittedUserName, status, title, marks, obtainedMarks, feedback}
  console.log(submitData ,id)
 
+//  validation email
+if(submittedUserEmail === user.email){
+ return alert('You can not submit your own assignment')
+}
+
  axios.post('http://localhost:5000/submittedAssignments', submitData)
     .then(res=>{
         console.log(res.data)
@@ -64,13 +69,13 @@ const handleSubmit=e=>{
                                 <label className="label">
                                     <span className="label-text">Assignment docs link</span>
                                 </label>
-                                <input type="url" name='url' placeholder="drop a link" className="input input-bordered" required />
+                                <input type="url" name='url' placeholder="drop a link"  className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Note</span>
                                 </label>
-                                <textarea type="text" name='note' placeholder="write a note" className="input input-bordered" required />
+                                <textarea type="text" name='note' placeholder="write a note"  className="input input-bordered" required />
                                 
                             </div>
                             <div className="form-control mt-6">

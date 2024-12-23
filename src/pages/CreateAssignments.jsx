@@ -62,6 +62,7 @@ const handleSubmit=e=>{
                     <div>
                         <label className="block text-sm font-medium">Description</label>
                         <textarea
+                        
                             name="description"
                             className="border border-gray-300 rounded w-full p-2"
                             rows="4"
