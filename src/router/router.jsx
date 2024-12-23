@@ -12,6 +12,7 @@ import Private from "../Private/Private";
 import UpdateAssignment from "../pages/UpdateAssignment";
 import DetailsPage from "../pages/DetailsPage";
 import Submission from "../pages/Submission";
+import Marks from "../pages/Marks";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         {
           path:'/pdAssignments',
           element:<Private><PdAssignments></PdAssignments></Private>
+        },
+        {
+          path:'/marks/:id',
+          element:<Private><Marks></Marks></Private>
         },
         {
           path:'/createAssignment',
