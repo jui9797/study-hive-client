@@ -25,8 +25,12 @@ const handleSubmit=e=>{
  const note =form.note.value
  const submittedUserEmail = user.email
  const creatorUserEmail = assignment.creatorEmail
+ const title = assignment.title
+ const marks = assignment.marks
  const status = 'Pending'
- const submitData ={url, note, submittedUserEmail, creatorUserEmail, status}
+ const obtainedMarks = 'Pending'
+ const feedback = 'Pending'
+ const submitData ={url, note, submittedUserEmail, creatorUserEmail, status, title, marks, obtainedMarks, feedback}
  console.log(submitData ,id)
 
  axios.post('http://localhost:5000/submittedAssignments', submitData)
