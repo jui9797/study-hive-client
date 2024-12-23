@@ -36,7 +36,7 @@ const handleSubmit=e=>{
  console.log(submitData ,id)
 
 //  validation email
-if(submittedUserEmail === user.email){
+if(creatorUserEmail === user.email){
  return alert('You can not submit your own assignment')
 }
 

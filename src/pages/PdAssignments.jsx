@@ -11,7 +11,8 @@ const PdAssignments = () => {
             .then(res => {
                 const assignments = res.data
                 console.log(assignments)
-                setPendings(assignments)
+                const pendingAssignments = assignments.filter(assignment => assignment.status === "Pending");
+                setPendings(pendingAssignments)
             })
     }, [])
 

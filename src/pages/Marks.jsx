@@ -8,6 +8,7 @@ const Marks = () => {
     const {user} = useContext(AuthContext)
     
     const [assignment, setAssignment] = useState({})
+    
 
     useEffect(() => {
         axios.get(`http://localhost:5000/submittedAssignments/${id}`)
@@ -20,13 +21,28 @@ const Marks = () => {
 
     const handleFeedback=e=>{
         e.preventDefault()
-        const mark =e.target.mark.value
+        const obtainedMarks =e.target.obtainedMarks.value
         const feedback =e.target.feedback.value
-        console.log(mark, feedback)
+        console.log(obtainedMarks, feedback)
         if(assignment.submittedUserEmail === user.email){
             return alert('You cannot examine your own assignment')
         }
+
+      if(assignment.status == 'Completed') {
+        return alert('Already marked')
+      }
+      const status ='Completed'
+      axios.patch(`http://localhost:5000/bid/${id}`,{status, obtainedMarks, feedback})
+      .then(data=> {
+        if(data.data){
+            alert('success status')
+        }
+      })
     }
+
+     
+        
+     
 
     return (
         <div>
@@ -44,7 +60,7 @@ const Marks = () => {
             <form onSubmit={handleFeedback} className='border-2 p-4 flex flex-col w-1/2 lg:w-1/4'>
                 <input
                     type="number"
-                    name='mark'
+                    name='obtainedMarks'
                     required
                     placeholder="Give Number"
                     className="input input-bordered input-md w-full max-w-xs my-4" />
@@ -54,7 +70,7 @@ const Marks = () => {
                     required
                     placeholder="Give a feedback"
                     className="input input-bordered input-md w-full max-w-xs" />
-                <button className='btn mt-4'>Submit</button>
+                <button  className='btn mt-4'>Submit</button>
             </form>
         </div>
     );

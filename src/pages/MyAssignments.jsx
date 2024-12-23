@@ -42,7 +42,8 @@ const MyAssignments = () => {
                                <td>{item.title}</td>
                                <td>{item.status}</td>
                                <td>{item.marks}</td>
-                               <td>{item.obtainedMarks}</td>
+                               <td>{item.obtainedMarks
+                               }</td>
                                <td>{item.feedback}</td>
                            </tr>
                             ) 
