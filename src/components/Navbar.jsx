@@ -1,11 +1,13 @@
 
-import { useContext,  } from 'react';
+import { useContext, } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import { MdLightMode } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
 
 
 const Navbar = () => {
-    const { user, logOut, loading } = useContext(AuthContext)
+    const { user, logOut, loading, isDarkMode, toggleTheme } = useContext(AuthContext)
 
     const links = <>
         <NavLink to='/'>Home</NavLink>
@@ -41,7 +43,10 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <a className=" text-xl">StudyHive</a>
-                    <button className='btn'>Theme</button>
+                    {/* theme button */}
+                    <button className='border-2 rounded-full p-2 lg:ml-2' onClick={toggleTheme}>
+                        {isDarkMode ? <MdLightMode /> : <MdDarkMode />}
+                    </button>
                 </div>
                 <div className='navbar-end'>
                     <div className="hidden lg:flex ">
@@ -61,17 +66,17 @@ const Navbar = () => {
                                     <div className="dropdown dropdown-end">
 
                                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                            
+
                                             <div className="w-10 rounded-full">
-                                        <img
-                                        className='cursor-pointer text-red-500'
-                                            alt="Tailwind CSS Navbar component"
-                                            title={user?.displayName}
-                                            src={user?.
-                                                photoURL} />
-                                                
-                                                
-                                    </div>
+                                                <img
+                                                    className='cursor-pointer text-red-500'
+                                                    alt="Tailwind CSS Navbar component"
+                                                    title={user?.displayName}
+                                                    src={user?.
+                                                        photoURL} />
+
+
+                                            </div>
 
 
                                         </div>
@@ -92,8 +97,8 @@ const Navbar = () => {
                             <>
                                 {/* user log out div */}
                                 <div className=''>
-                                    <button className='btn ml-2'><Link to='/register'>Register</Link></button>
-                                    <button className='btn ml-2'><Link to='/login'>Login</Link></button>
+                                    <button className='btn ml-2 p-1'><Link to='/register'>Register</Link></button>
+                                    <button className='btn ml-2 py-1 px-2'><Link to='/login'>Login</Link></button>
                                 </div>
                             </>
                         )}

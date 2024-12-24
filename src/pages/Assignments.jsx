@@ -22,7 +22,7 @@ const Assignments = () => {
         <div className='my-10 lg:my-20'>
             <div className='flex flex-col lg:flex-row gap-4 items-center'>
                 <h2 className='text-4xl font-bold text-center my-4'>All Assignments: {assignments.length}</h2>
-
+                 
                 <div>
                     <select
                         className="select select-bordered w-full max-w-xs"
@@ -44,10 +44,13 @@ const Assignments = () => {
                     <button className="btn join-item ">Search</button>
                 </div>
             </div>
+            <div>
+            <h2 className='text-2xl my-4 text-center'>{assignments.length === 0 ? 'No Data Found' : ''}</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
                     assignments.map((item, index) => <AssignCard key={index} item={item} assignments={assignments} setAssignments={setAssignments}></AssignCard>)
                 }
+            </div>
             </div>
         </div>
     );

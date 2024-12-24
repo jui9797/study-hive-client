@@ -11,6 +11,9 @@ const AuthProvider = ({children}) => {
     const [user, setUser] =useState(null)
     const [loading, setLoading] =useState(true)
 
+     // State for theme (dark or light)
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
      //  new user
      const createNewUser = (email, password) => {
         setLoading(true);
@@ -50,8 +53,26 @@ const AuthProvider = ({children}) => {
         };
       }, []);
 
+      // theme management
+      useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          setIsDarkMode(savedTheme === 'dark');
+        }
+      }, []);
+
+      // Toggle theme function
+  const toggleTheme = () => {
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem('theme', newMode ? 'dark' : 'light');
+      return newMode;
+    });
+  };
+
 const authInfo = {
-    createNewUser, user, setUser, loading, userlogin, googleLogin, logOut
+    createNewUser, user, setUser, loading, userlogin, googleLogin, logOut, isDarkMode,
+    toggleTheme,
 }
 
     return (
