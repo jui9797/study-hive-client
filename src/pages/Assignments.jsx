@@ -10,24 +10,33 @@ const Assignments = () => {
     const [filter, setFilter] = useState('')
 
     useEffect(() => {
-        axios.get('http://localhost:5000/assignments')
+        axios.get(`http://localhost:5000/assignments?filter=${filter}`)
             .then(res => {
                 // console.log(res.data)
                 setAssignments(res.data)
             })
-    }, [])
+    }, [filter])
 
     return (
         <div className='my-10 lg:my-20'>
             <div className='flex flex-col lg:flex-row gap-4 items-center'>
                 <h2 className='text-4xl font-bold text-center my-4'>All Assignments: {assignments.length}</h2>
 
-                <div><select className="select select-bordered w-full max-w-xs" name='difficulty'
-                onChange={(e)=>setFilter(e.target.value)}>
-                    <option >easy</option>
-                    <option>medium</option>
-                    <option>hard</option>
-                </select></div>
+                <div>
+                    <select
+                        className="select select-bordered w-full max-w-xs"
+                        name="difficulty"
+                        onChange={(e) => setFilter(e.target.value)}
+                        defaultValue="" // Default value for placeholder
+                    >
+                        <option value="" disabled>
+                            Select difficulty
+                        </option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
 
                 <div className="join">
                     <input className="input input-bordered join-item" placeholder="Search" />
