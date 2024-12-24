@@ -30,6 +30,16 @@ const handleSubmit=e=>{
     const assignment ={title, description, marks, thumbnailUrl, difficulty, dueDate, creatorName, creatorEmail}
     console.log(assignment)
 
+    // validation
+    if (!isNaN(title)) {
+        // Check if title is a number
+        return alert("Assignment title cannot be a number!");
+      }
+    if (!isNaN(description)) {
+        // Check if title is a number
+        return alert("Assignment description cannot be a number!");
+      }
+
     // post a new assignment
     axios.post('http://localhost:5000/assignments', assignment)
     .then(res=>{

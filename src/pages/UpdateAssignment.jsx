@@ -60,6 +60,16 @@ const UpdateAssignment = () => {
 
     }
 
+    // validation
+    if (!isNaN(title)) {
+        // Check if title is a number
+        return alert("Assignment title cannot be a number!");
+      }
+    if (!isNaN(description)) {
+        // Check if title is a number
+        return alert("Assignment description cannot be a number!");
+      }
+
     // patch method 
     axios.patch(`http://localhost:5000/assignments/${id}`, assignment)
     .then(res=>{
