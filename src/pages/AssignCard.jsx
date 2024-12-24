@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { RiDeleteBin2Fill } from "react-icons/ri";
-import { MdSystemUpdateAlt } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import axios from 'axios';
@@ -74,7 +74,7 @@ const handleDelete=(id)=>{
                         <Link to={`/details/${_id}`}><button className="btn">View Assignment</button></Link>
                         <div>
                         <button onClick={()=>handleDelete(_id)} className="btn mr-4 text-xl"><RiDeleteBin2Fill /></button>
-                        <Link to={`/update/${_id}`}><button className="btn text-xl"><MdSystemUpdateAlt /></button></Link>
+                        <Link to={`/update/${_id}`}><button className="btn text-xl"><FaEdit /></button></Link>
                         </div>
                     </div>
                 </div>

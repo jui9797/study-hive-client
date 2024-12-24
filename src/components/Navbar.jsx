@@ -40,7 +40,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className=" text-xl">LOGO</a>
+                    <a className=" text-xl">StudyHive</a>
                     <button className='btn'>Theme</button>
                 </div>
                 <div className='navbar-end'>

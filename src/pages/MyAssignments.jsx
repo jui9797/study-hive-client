@@ -40,7 +40,7 @@ const MyAssignments = () => {
                                 <tr key={index}>
                                <th>{index+1}</th>
                                <td>{item.title}</td>
-                               <td>{item.status}</td>
+                               <td  className={`${item.status === 'Pending' && 'text-amber-500' || item.status === 'Completed' && 'text-green-600'}`}>{item.status}</td>
                                <td>{item.marks}</td>
                                <td>{item.obtainedMarks
                                }</td>

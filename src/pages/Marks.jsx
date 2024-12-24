@@ -32,7 +32,7 @@ const Marks = () => {
         return alert('Already marked')
       }
       const status ='Completed'
-      axios.patch(`http://localhost:5000/bid/${id}`,{status, obtainedMarks, feedback})
+      axios.patch(`http://localhost:5000/status/${id}`,{status, obtainedMarks, feedback})
       .then(data=> {
         if(data.data){
             alert('success status')
