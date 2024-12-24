@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .active{
-    color:red;
+    color:#9D174D;
    font-weight: bold;
 }
 

@@ -1,14 +1,18 @@
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const Footer = () => {
+    const { isDarkMode } = useContext(AuthContext)
     return (
         <div className='w-11/12 mx-auto'>
-            <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
+            <footer className={`footer footer-center p-10 rounded ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-base-200 text-base-content'
+                }`}>
                 <nav className="grid grid-flow-col gap-4">
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <a className="link link-hover">Assignments</a>
+                    <a className="link link-hover">Blogs</a>
                 </nav>
                 <nav>
                     <div className="grid grid-flow-col gap-4">
@@ -48,7 +52,7 @@ const Footer = () => {
                     </div>
                 </nav>
                 <aside>
-                    <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+                    <p>Copyright © {new Date().getFullYear()} - All right reserved by <span className="italic text-2xl font-bold">Study<span className="text-pink-800">Hive</span></span></p>
                 </aside>
             </footer>
         </div>

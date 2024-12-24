@@ -1,16 +1,16 @@
-// import React, { useContext } from 'react';
-// import { useContext } from 'react';
+
+
 import AssignmentGrid from './AssignmentGrid';
 import Banner from './Banner';
 import Faq from './Faq';
 import WhyChoose from './whyChoose';
-// import { AuthContext } from '../provider/AuthProvider';
 
-// import { AuthContext } from '../provider/AuthProvider';
+
+
 
 const Home = () => {
   
-    // const {user} =useContext(AuthContext)
+    
     return (
       <div>
             <Banner></Banner>

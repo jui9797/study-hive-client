@@ -19,7 +19,7 @@ const Navbar = () => {
 
     return (
         <div className='w-11/12 mx-auto'>
-            <div className="navbar bg-base-100">
+            <div className={`navbar ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-base-100'}`}>
                 <div className="navbar-start ">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,7 +42,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className=" text-xl">StudyHive</a>
+                    <a className=" text-xl font-bold italic">Study<span className='text-pink-800'>Hive</span></a>
                     {/* theme button */}
                     <button className='border-2 rounded-full p-2 lg:ml-2' onClick={toggleTheme}>
                         {isDarkMode ? <MdLightMode /> : <MdDarkMode />}
@@ -83,13 +83,15 @@ const Navbar = () => {
 
                                         <ul
                                             tabIndex={0}
-                                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                            className={`menu menu-sm dropdown-content ${
+                                                isDarkMode ? 'bg-black' : 'bg-base-100'
+                                              } rounded-box z-[1] mt-3 w-52 p-2 shadow`}>
                                             <NavLink to='/createAssignment'>Create Assignment</NavLink>
                                             <NavLink to='/myAssignments'>My Attempted Assignments</NavLink>
                                         </ul>
                                     </div>
                                     <div>
-                                        <button onClick={logOut} className='btn ml-2'>Log Out</button>
+                                        <button onClick={logOut} className='btn border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'>Log Out</button>
                                     </div>
                                 </div>
                             </>
@@ -97,8 +99,8 @@ const Navbar = () => {
                             <>
                                 {/* user log out div */}
                                 <div className=''>
-                                    <button className='btn ml-2 p-1'><Link to='/register'>Register</Link></button>
-                                    <button className='btn ml-2 py-1 px-2'><Link to='/login'>Login</Link></button>
+                                    <button className='btn border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'><Link to='/register'>Register</Link></button>
+                                    <button className='btn border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-yellow-300 ...'><Link to='/login'>Login</Link></button>
                                 </div>
                             </>
                         )}

@@ -8,7 +8,7 @@ import { AuthContext } from "../provider/AuthProvider";
 const MainLayOut = () => {
     const {isDarkMode} = useContext(AuthContext)
     return (
-        <div className={isDarkMode ? 'bg-black overflow-hidden ' : 'overflow-hidden w-11/12 mx-auto' }>
+        <div className={isDarkMode ? 'bg-gray-800 overflow-hidden ' : 'overflow-hidden w-11/12 mx-auto' }>
             
             <Navbar></Navbar>
             <div className='w-11/12 mx-auto min-h-[80vh]'> 

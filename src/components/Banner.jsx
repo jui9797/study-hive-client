@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div>
             <div
-                className="hero min-h-screen"
+                className="hero h-[250px] lg:h-[500px]"
                 style={{
                     backgroundImage: `url(${bannerImg})`,
                 }}>
