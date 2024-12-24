@@ -20,7 +20,7 @@ const Home = () => {
           <div className='my-10'>
             <AssignmentGrid></AssignmentGrid>
           </div>
-          <div className='my-10 border-2'>
+          <div className='my-10 lg:my-20'>
           <Faq></Faq>
           </div>
         </div>

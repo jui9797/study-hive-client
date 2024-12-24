@@ -52,7 +52,7 @@ const Footer = () => {
                     </div>
                 </nav>
                 <aside>
-                    <p>Copyright © {new Date().getFullYear()} - All right reserved by <span className="italic text-2xl font-bold">Study<span className="text-pink-800">Hive</span></span></p>
+                    <p>Copyright © {new Date().getFullYear()} - All right reserved by <a className=" text-xl font-bold italic">Study<span className={isDarkMode ? 'text-green-500' : 'text-pink-800'}>Hive</span></a></p>
                 </aside>
             </footer>
         </div>
