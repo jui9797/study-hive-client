@@ -91,7 +91,7 @@ const UpdateAssignment = () => {
     return (
         <div>
             <div className="assignment-form-container bg-pink-300 p-4">
-                <h2 className="text-lg font-bold mb-4">Create Assignment</h2>
+                <h2 className="text-lg font-bold mb-4">Update Assignment Information</h2>
                 <form onSubmit ={handleUpdate} className="space-y-4">
                     {/* Title */}
                     <div>

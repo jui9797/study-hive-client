@@ -8,14 +8,15 @@ const Assignments = () => {
 
     const [assignments, setAssignments] = useState([])
     const [filter, setFilter] = useState('')
+    const [search, setSearch] = useState('')
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/assignments?filter=${filter}`)
+        axios.get(`http://localhost:5000/assignments?filter=${filter}&search=${search}`)
             .then(res => {
                 // console.log(res.data)
                 setAssignments(res.data)
             })
-    }, [filter])
+    }, [filter, search])
 
     return (
         <div className='my-10 lg:my-20'>
@@ -39,7 +40,7 @@ const Assignments = () => {
                 </div>
 
                 <div className="join">
-                    <input className="input input-bordered join-item" placeholder="Search" />
+                    <input className="input input-bordered join-item" onChange={e=>setSearch(e.target.value)} placeholder="Search" />
                     <button className="btn join-item ">Search</button>
                 </div>
             </div>

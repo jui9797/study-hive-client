@@ -46,7 +46,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/update/:id',
-          element:<Private><UpdateAssignment></UpdateAssignment></Private>
+          element:<UpdateAssignment></UpdateAssignment>
         },
         {
           path:'/pdAssignments',
