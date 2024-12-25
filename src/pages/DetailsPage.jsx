@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
+import { motion } from "motion/react"
+
 
 const DetailsPage = () => {
-    const { user } = useContext(AuthContext)
+    const { user, isDarkMode } = useContext(AuthContext)
     const { id } = useParams()
     const [assignment, setAssignment] = useState({})
 
@@ -23,11 +25,17 @@ const DetailsPage = () => {
     return (
         <div className='my-10 lg:my-20'>
 
-            <div className="hero bg-base-200 min-h-screen">
+            <div className={`hero  min-h-screen ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-base-100 text-pink-800'}`}>
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img
+                    
+                    <motion.img
+                    
+                    initial={{ y: 0 }}
+                    animate={{ y: [0, -20, 0] }}
+                    transition={{ duration: 1, repeat: Infinity }}
                         src={assignment?.thumbnailUrl}
                         className=" w-full lg:w-1/2 h-[300px] rounded-lg shadow-2xl" />
+                    
                     <div>
                         <h1 className="text-2xl lg:text-4xl font-bold">{assignment?.title}</h1>
                         <p className="py-4">
@@ -52,7 +60,7 @@ const DetailsPage = () => {
                         <p className='my-2'><span className='font-bold mr-2'>Highest Marks:</span>{assignment?.marks}</p>
                         <p className='my-2'><span className='font-bold mr-2'>Creator Name:</span>{assignment?.creatorName}</p>
                         <p className='my-2'><span className='font-bold mr-2'>Creator Email:</span>{assignment?.creatorEmail}</p>
-                        <Link to={`/submission/${assignment._id}`}><button className="btn btn-primary">Take assignment</button></Link>
+                        <Link to={`/submission/${assignment._id}`}><button className="btn bg-blue-400 text-white border-none">Take assignment</button></Link>
                         
                         
                     </div>

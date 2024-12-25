@@ -1,11 +1,14 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import Swal from 'sweetalert2';
+
 
 const Submission = () => {
     const {user} =useContext(AuthContext)
     const {id} =useParams()
+    const navigate =useNavigate()
     const [assignment, setAssignment] = useState({})
 
     useEffect(() => {
@@ -33,37 +36,57 @@ const handleSubmit=e=>{
  const obtainedMarks = 'Pending'
  const feedback = 'Pending'
  const submitData ={url, note, submittedUserEmail, creatorUserEmail, submittedUserName, status, title, marks, obtainedMarks, feedback}
- console.log(submitData ,id)
+//  console.log(submitData ,id)
 
 //  validation email
 if(creatorUserEmail === user.email){
- return alert('You can not submit your own assignment')
+ return Swal.fire({
+    title: "sorry",
+    text: "You can not submit ",
+    icon: "error"
+  })
 }
 
  axios.post('http://localhost:5000/submittedAssignments', submitData)
     .then(res=>{
-        console.log(res.data)
-        alert('add new assignment in database')
+        // console.log(res.data)
+        Swal.fire({
+                                title: "Great",
+                                text: "submission process is successfull",
+                                icon: "success"
+                              })
+        navigate('/pdAssignments')
     })
     .catch((error) => {
-        console.error('Error adding assignment:', error);
-        alert('Failed to add assignment.');
+        // console.error('Error adding assignment:', error);
+        Swal.fire({
+                                title: "error",
+                                text: "Submission process is unsuccessfull",
+                                icon: "error"
+                              })
     });
 }
 
 
     return (
         <div className='my-10 lg:my-20'>
-            <h2 className='text-2xl'>Submission</h2>
-            <div className="hero bg-base-200 min-h-screen">
+            
+            <div
+            style={{
+                backgroundImage: "url('https://i.ibb.co/nf8z17P/seamless-pattern-vector-of-butterfly-beautiful-tiny-flower-background-v-1509447jpg-bw700.jpg')",
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+              }}
+            className="hero  min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Fill Up This From</h1>
-                        <p className="py-6">
+                        <h1 className="text-3xl font-bold text-pink-800">Fill Up This From And Submit Your Assignment</h1>
+                        <p className="py-6 text-pink-800">
                             Follow some instructions and fill up this form.
                         </p>
                     </div>
-                    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <div className="card bg-pink-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <form onSubmit={handleSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -79,12 +102,13 @@ if(creatorUserEmail === user.email){
                                 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Submit</button>
+                                <button className="btn bg-pink-800 text-white">Submit</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+           
         </div>
     );
 };
