@@ -1,16 +1,18 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { updateProfile } from 'firebase/auth';
 import auth from '../firebase/firebase.config';
+import Lottie from 'lottie-react';
+import reslootie from '../assets/lottie/Animation - 1735162077587.json'
 
 
 const Register = () => {
 
     const navigate =useNavigate()
     const { createNewUser, setUser } = useContext(AuthContext)
-
+    const location =useLocation()
     const handleRegister = e => {
         e.preventDefault()
         const form = e.target
@@ -64,7 +66,7 @@ const Register = () => {
                             text: "Register successful",
                             icon: "success"
                           });
-                          navigate('/')
+                          navigate(location?.state? location.state :'/')
 
                     })
                     .catch((err) => {
@@ -94,12 +96,10 @@ const Register = () => {
             <div className="hero  min-h-screen bg-[url('https://i.ibb.co.com/Gt4KQXP/pngtree-wooden-texture-login-form-enhancing-aesthetic-appeal-image-13918200.png')] my-10">
             <div className="hero-overlay bg-opacity-50"></div>
                 <div className="hero-content flex-col lg:flex-row-reverse gap-12">
-                    <div className="text-center lg:text-left text-white  lg:w-1/2">
-                        <h1 className="text-3xl lg:text-5xl font-bold">Register now!</h1>
-                        <p className="py-6">
-                        Join us today and unlock a world of possibilities! Create your account in just a few steps to start your journey with us. Stay connected, explore new opportunities, and enjoy exclusive features designed just for you.
-                        </p>
-                        <p className='ml-2 my-2'>  Already register ? Please<Link to='/login' className='text-pink-500 font-bold ml-2 italic text-xl'>Login</Link></p>
+                    <div className="text-center lg:text-left text-white  w-full ">
+                        <h1 className="text-3xl lg:text-4xl font-bold">Register now!</h1>
+                        <Lottie animationData={reslootie} style={{ width: '100%', height: '350px' }}></Lottie>
+                        <p className='ml-2 my-2'>  Already register ? Please<Link to='/login' className='text-[#0AB99D] font-bold ml-2 italic text-xl'>Login</Link></p>
                     </div>
                     <div className="card bg-base-100 bg-opacity-50 w-full max-w-sm shrink-0 shadow-2xl rounded-none">
                         <form onSubmit={handleRegister} className="card-body">
@@ -129,7 +129,7 @@ const Register = () => {
                                 
                             </div>
                             <div className="form-control mt-6">
-                                <button className='btn rounded-none border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'>Register</button>
+                                <button className='btn rounded-none   bg-gray-700 ml-2 text-white'>Register</button>
                             </div>
                         </form>
                        

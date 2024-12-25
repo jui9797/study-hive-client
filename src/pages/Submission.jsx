@@ -77,7 +77,7 @@ if(creatorUserEmail === user.email){
             
             <div
             style={{
-                backgroundImage: "url('https://i.ibb.co/nf8z17P/seamless-pattern-vector-of-butterfly-beautiful-tiny-flower-background-v-1509447jpg-bw700.jpg')",
+                backgroundImage: "url('https://img.freepik.com/premium-vector/abstract-background-geometric-blue-green-wave-effect-with-memphis-background_586360-2484.jpg')",
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
@@ -85,12 +85,12 @@ if(creatorUserEmail === user.email){
             className="hero  min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-3xl font-bold text-pink-800">Fill Up This From And Submit Your Assignment</h1>
-                        <p className="py-6 text-pink-800">
+                        <h1 className="text-3xl font-bold text-gray-800">Fill Up This From And Submit Your Assignment</h1>
+                        <p className="py-6 text-gray-500">
                             Follow some instructions and fill up this form.
                         </p>
                     </div>
-                    <div className="card bg-pink-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <div className="card bg-gray-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <form onSubmit={handleSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -106,7 +106,7 @@ if(creatorUserEmail === user.email){
                                 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn bg-pink-800 text-white">Submit</button>
+                                <button className="btn bg-[#0AB99D] text-white">Submit</button>
                             </div>
                         </form>
                     </div>

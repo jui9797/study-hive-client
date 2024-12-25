@@ -5,7 +5,7 @@ const AssignmentCard = ({assign}) => {
     const {_id, title, thumbnailUrl, dueDate, difficulty} = assign || {}
     return (
         <div>
-            <div className="card bg-purple-200 shadow-xl">
+            <div className="card bg-gray-100 shadow-xl">
                 <div >
                     <img
                     className='h-[300px] object-cover w-full'
@@ -14,11 +14,11 @@ const AssignmentCard = ({assign}) => {
                 </div>
                 <div className="card-body">
                     <h2 className="card-title">{title}</h2>
-                    <p> Due Date:{dueDate}</p>
-                    <p>Type: {difficulty}</p>
+                    <p className='text-gray-500'> Due Date:{dueDate}</p>
+                    <p className='text-gray-500'>Type: {difficulty}</p>
                     
                     <div className="card-actions">
-                    <Link to={`/details/${_id}`}><button className='btn border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'>View Assignment</button></Link>
+                    <Link to={`/details/${_id}`}><button className='btn border-none text-white ml-2 bg-[#0AB99D]'>View Assignment</button></Link>
                     </div>
                 </div>
             </div>

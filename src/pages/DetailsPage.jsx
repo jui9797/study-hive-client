@@ -25,7 +25,7 @@ const DetailsPage = () => {
     return (
         <div className='my-10 lg:my-20'>
 
-            <div className={`hero  min-h-screen ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-base-100 text-pink-800'}`}>
+            <div className={`hero  min-h-screen ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-base-100 text-gray-600'}`}>
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     
                     <motion.img
@@ -60,7 +60,7 @@ const DetailsPage = () => {
                         <p className='my-2'><span className='font-bold mr-2'>Highest Marks:</span>{assignment?.marks}</p>
                         <p className='my-2'><span className='font-bold mr-2'>Creator Name:</span>{assignment?.creatorName}</p>
                         <p className='my-2'><span className='font-bold mr-2'>Creator Email:</span>{assignment?.creatorEmail}</p>
-                        <Link to={`/submission/${assignment._id}`}><button className="btn bg-blue-400 text-white border-none">Take assignment</button></Link>
+                        <Link to={`/submission/${assignment._id}`}><button className="btn bg-[#0AB99D] text-white border-none">Take assignment</button></Link>
                         
                         
                     </div>

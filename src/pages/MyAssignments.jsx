@@ -1,29 +1,30 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 
 const MyAssignments = () => {
     const { user, isDarkMode } = useContext(AuthContext)
-
+    const axiosSecure = useAxiosSecure()
     const [submits, setSubmits] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/submittedAssignments/email?email=${user?.email}`)
+        axiosSecure.get(`/submittedAssignments/email?email=${user.email}`)
             .then(res => {
-                // console.log(res.data), 
+                // console.log(res) 
                 setSubmits(res.data)
             })
-            .catch(error => console.log(error.message))
-    }, [user?.email])
-
+            .catch(error => console.log(error, 'error'))
+    },[user.email, axiosSecure])
+// console.log(user?.email)
     return (
         <div className='my-10 lg:my-20'>
-            <h2 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-pink-800'}`}>My attempt assignment:{submits.length}</h2>
-            <div className='my-4 p-2 bg-pink-400'>
+            <h2 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-[#0AB99D]'}`}>My attempt assignment:{submits.length}</h2>
+            <div className='my-4 p-2 bg-[#0AB99D]'>
                 <div className="overflow-x-auto">
-                    <table className="table bg-pink-100 rounded-none">
+                    <table className={`table  rounded-none ${isDarkMode? 'bg-gray-300' :'bg-gray-50'}`}>
                         {/* head */}
-                        <thead className='bg-purple-300 font-bold'>
+                        <thead className='bg-gray-300 font-bold'>
                             <tr>
                                 <th></th>
                                 <th>Title</th>
@@ -39,12 +40,12 @@ const MyAssignments = () => {
                                submits.map((item,index)=>
                                 <tr key={index}>
                                <th>{index+1}</th>
-                               <td className='font-bold'>{item.title}</td>
-                               <td  className={`${item.status === 'Pending' && 'text-amber-500' || item.status === 'Completed' && 'text-green-600'}`}>{item.status}</td>
+                               <td className='font-bold text-gray-400'>{item.title}</td>
+                               <td  className={`${item.status === 'Pending' && 'text-amber-700' || item.status === 'Completed' && 'text-green-800'}`}>{item.status}</td>
                                <td>{item.marks}</td>
-                               <td className={`${item.status === 'Pending' && 'text-amber-500'}`}>{item.obtainedMarks
+                               <td className={`${item.status === 'Pending' && 'text-amber-700'}`}>{item.obtainedMarks
                                }</td>
-                               <td className={`${item.status === 'Pending' && 'text-amber-500'}`}>{item.feedback}</td>
+                               <td className={`${item.status === 'Pending' && 'text-amber-700'}`}>{item.feedback}</td>
                            </tr>
                             ) 
                             }

@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Spinner from '../components/Spinner';
 
 const Private = ({children}) => {
     const{loading, user} =useContext(AuthContext)
-
+     const location =useLocation()
+     const navigate =useNavigate()
     if(loading){
         return (<>
         <Spinner></Spinner>
@@ -18,7 +19,7 @@ const Private = ({children}) => {
 
     return (
         <div>
-            <Navigate to='/login'></Navigate>
+            <Navigate to='/login' state={location.pathname}></Navigate>
         </div>
     );
 };

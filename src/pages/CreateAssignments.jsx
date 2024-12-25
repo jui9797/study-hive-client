@@ -75,8 +75,8 @@ const handleSubmit=e=>{
 }
 
     return (
-        <div>
-            <div className={`assignment-form-container rounded-lg  p-4 ${isDarkMode? 'bg-gray-800 text-white' : 'bg-blue-200'}`}>
+        <div className='my-10'>
+            <div className={`assignment-form-container rounded-lg  p-4 ${isDarkMode? 'bg-gray-800 text-white' : 'bg-green-50'}`}>
                 <h2 className="text-lg font-bold mb-4">Create Assignment For Others.</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Title */}
@@ -182,7 +182,7 @@ const handleSubmit=e=>{
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className='btn mt-4 border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'
+                        className='btn mt-4 border-none text-white ml-2 bg-[#0AB99D]'
                     >
                         Submit Assignment
                     </button>

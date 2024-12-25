@@ -20,7 +20,7 @@ const Navbar = () => {
 
     return (
         <div className='w-11/12 mx-auto'>
-            <div className={`navbar ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-base-100'}`}>
+            <div className={`navbar ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-base-100 text-gray-700'}`}>
                 <div className="navbar-start ">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -43,7 +43,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className=" text-xl font-bold italic">Study<span className={isDarkMode ? 'text-green-500' : 'text-pink-800'}>Hive</span></a>
+                    <a className=" text-xl font-bold italic ">Study<span className={isDarkMode ? 'text-[#0AB99D]' : 'text-[#0AB99D]'}>Hive</span></a>
                     {/* theme button */}
                     <button className='border-2 rounded-full p-2 lg:ml-2' onClick={toggleTheme}>
                         {isDarkMode ? <MdLightMode /> : <MdDarkMode />}
@@ -70,7 +70,7 @@ const Navbar = () => {
 
                                             <div className="w-10 rounded-full">
                                                 <img
-                                                    className='cursor-pointer text-red-500'
+                                                    className='cursor-pointer text-[#0AB99D]'
                                                     alt="Tailwind CSS Navbar component"
                                                     title={user?.displayName}
                                                     src={user?.
@@ -92,7 +92,7 @@ const Navbar = () => {
                                         </ul>
                                     </div>
                                     <div>
-                                        <button onClick={logOut} className='btn border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'>Log Out</button>
+                                        <button onClick={logOut} className='btn border-none text-white ml-2 bg-[#0AB99D] rounded-lg'>Log Out</button>
                                     </div>
                                 </div>
                             </>
@@ -100,8 +100,8 @@ const Navbar = () => {
                             <>
                                 {/* user log out div */}
                                 <div className=''>
-                                    <button className='btn border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'><Link to='/register'>Register</Link></button>
-                                    <button className='btn border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-yellow-300 ...'><Link to='/login'>Login</Link></button>
+                                    <button className='btn border-none text-white ml-2 bg-[#0AB99D] rounded-lg'><Link to='/register'>Register</Link></button>
+                                    <button className='btn border-none text-white ml-2 bg-[#0AB99D] rounded-lg'><Link to='/login'>Login</Link></button>
                                 </div>
                             </>
                         )}

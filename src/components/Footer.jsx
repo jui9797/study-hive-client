@@ -6,7 +6,7 @@ const Footer = () => {
     const { isDarkMode } = useContext(AuthContext)
     return (
         <div className='w-11/12 mx-auto'>
-            <footer className={`footer footer-center p-10 rounded ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-base-200 text-base-content'
+            <footer className={`footer footer-center p-10 rounded ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-[#0AB99D] text-white'
                 }`}>
                 <nav className="grid grid-flow-col gap-4">
                     <a className="link link-hover">About us</a>
@@ -52,7 +52,7 @@ const Footer = () => {
                     </div>
                 </nav>
                 <aside>
-                    <p>Copyright © {new Date().getFullYear()} - All right reserved by <a className=" text-xl font-bold italic">Study<span className={isDarkMode ? 'text-green-500' : 'text-pink-800'}>Hive</span></a></p>
+                    <p>Copyright © {new Date().getFullYear()} - All right reserved by <a className=" text-xl font-bold italic">Study<span className={isDarkMode ? 'text-[#0AB99D]' : 'text-gray-700'}>Hive</span></a></p>
                 </aside>
             </footer>
         </div>

@@ -4,7 +4,7 @@ import AssignCard from './AssignCard';
 import { AuthContext } from '../provider/AuthProvider';
 import 'animate.css'
 
-import { motion } from "motion/react"
+
 
 const Assignments = () => {
 
@@ -25,8 +25,8 @@ const Assignments = () => {
         <div className='my-10 lg:my-20'>
             <div className='flex flex-col lg:flex-row gap-4  justify-between '>
                 <div className='text-left  lg:w-1/2'>
-                <h2  className={`text-4xl font-bold  my-4 animate__animated animate__zoomIn ${isDarkMode? 'text-white' : 'text-pink-800'} `}>All Assignments</h2>
-                <motion.p animate={{color:['#DC143C', '#800080', '#0000FF', '#008000', '#FFFF00', '#FF0000']}} transition={{duration:5, repeat:Infinity}}>Create and manage assignments easily. Submit your work, review others submissions, and grade your friends assignments in a collaborative environment.</motion.p>
+                <h2  className={`text-4xl font-bold  my-4 animate__animated animate__zoomIn ${isDarkMode? 'text-white' : 'text-gray-700'} `}>All Assignments</h2>
+                <p className='text-gray-400'>Create and manage assignments easily. Submit your work, review others submissions, and grade your friends assignments in a collaborative environment.</p>
                 </div>
                <div className='flex gap-4 '>
                <div>
@@ -36,18 +36,18 @@ const Assignments = () => {
                         onChange={(e) => setFilter(e.target.value)}
                         defaultValue="" // Default value for placeholder
                     >
-                        <option value="" disabled>
+                        <option className='text-gray-700' value="" disabled>
                             Select difficulty
                         </option>
-                        <option className='text-pink-800' value="easy">Easy</option>
-                        <option className='text-pink-800' value="medium">Medium</option>
-                        <option className='text-pink-800' value="hard">Hard</option>
+                        <option className='text-[#0AB99D]' value="easy">Easy</option>
+                        <option className='text-[#0AB99D]' value="medium">Medium</option>
+                        <option className='text-[#0AB99D]' value="hard">Hard</option>
                     </select>
                 </div>
 
                 <div className="join">
                     <input className="input input-bordered join-item w-[140px] lg:w-[200px]" onChange={e=>setSearch(e.target.value)} placeholder="Search by title"/>
-                    <button className='btn join-item border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'>Search</button>
+                    <button className='btn join-item border-none text-white ml-2 bg-[#0AB99D]'>Search</button>
                 </div>
                </div>
             </div>

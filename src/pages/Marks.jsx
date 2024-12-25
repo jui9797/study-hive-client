@@ -70,9 +70,9 @@ const Marks = () => {
      
 
     return (
-        <div className={`flex flex-col border-2 p-4  items-center ${isDarkMode? 'text-black' : 'text-pink-800'}`}
+        <div className={`flex flex-col border-2 p-4  items-center ${isDarkMode? 'text-white' : 'text-white'}`}
         style={{
-            backgroundImage: "url('https://i.ibb.co/nf8z17P/seamless-pattern-vector-of-butterfly-beautiful-tiny-flower-background-v-1509447jpg-bw700.jpg')",
+            backgroundImage: "url('https://i.ibb.co.com/7k0H2k9/360-F-915544311-i-Iz-Qy-BCJfcm-Sl-Diz-Ziwd-JTDnvn1m-Ey0v.jpg')",
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
@@ -102,7 +102,7 @@ const Marks = () => {
                     required
                     placeholder="Give a feedback"
                     className="input input-bordered input-md w-full " />
-                <button className='btn mt-4 border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'>Submit</button>
+                <button className='btn mt-4 border-none text-white ml-2 bg-[#0AB99D]'>Submit</button>
             </form>
         </div>
     );

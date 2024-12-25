@@ -95,8 +95,8 @@ const UpdateAssignment = () => {
     }
 
     return (
-        <div>
-            <div className="assignment-form-container bg-pink-200 p-4">
+        <div className='py-10 text-gray-700'>
+            <div className="assignment-form-container bg-green-100 p-4">
                 <h2 className="text-lg font-bold mb-4">Update Assignment Information</h2>
                 <form onSubmit ={handleUpdate} className="space-y-4">
                     {/* Title */}
@@ -207,7 +207,7 @@ const UpdateAssignment = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600"
+                        className=" text-white rounded px-4 py-2  bg-[#0AB99D]"
                     >
                         Submit Assignment
                     </button>

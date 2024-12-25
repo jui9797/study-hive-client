@@ -56,7 +56,7 @@ const handleDelete=(id)=>{
 
     return (
         <div>
-            <div className="card  shadow-xl p-4 bg-purple-300 rounded-none animate__animated animate__lightSpeedInRight md:h-[500px]">
+            <div className="card  shadow-xl p-4 bg-gray-100 rounded-none animate__animated animate__lightSpeedInRight md:h-[500px]">
                 <div className=''>
                 
                     <img referrerPolicy='no-referrer'
@@ -66,16 +66,16 @@ const handleDelete=(id)=>{
                 
                 </div>
                 <div className=" h-[200px]">
-                    <h2 className="card-title font-bold">{title}</h2>
+                    <h2 className="card-title font-bold text-gray-700 mb-2">{title}</h2>
                     
-                    <p><span className='font-bold mr-2'>Difficulty Level:</span> {difficulty}</p>
-                    <p><span className='font-bold mr-2'>Highest Marks:</span> {marks}</p>
-                    <p><span className='font-bold mr-2'>Due Date:</span> {dueDate}</p>
+                    <p className='text-gray-500'><span className='font-bold mr-2'>Difficulty Level:</span> {difficulty}</p>
+                    <p className='text-gray-500'><span className='font-bold mr-2'>Highest Marks:</span> {marks}</p>
+                    <p className='text-gray-500'><span className='font-bold mr-2'>Due Date:</span> {dueDate}</p>
                     <div className="card-actions flex justify-between mt-4">
-                        <Link to={`/details/${_id}`}><button className='btn border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'>View Assignment</button></Link>
+                        <Link to={`/details/${_id}`}><button className='btn border-none text-white ml-2 bg-[#0AB99D]'>View Assignment</button></Link>
                         <div>
-                        <button onClick={()=>handleDelete(_id)} className="btn mr-4 text-xl"><RiDeleteBin2Fill /></button>
-                        <Link to={`/update/${_id}`}><button className="btn text-xl"><FaEdit /></button></Link>
+                        <button onClick={()=>handleDelete(_id)} className="btn mr-4 text-xl text-[#0AB99D]"><RiDeleteBin2Fill /></button>
+                        <Link to={`/update/${_id}`}><button className="btn text-xl text-[#0AB99D]"><FaEdit /></button></Link>
                         </div>
                     </div>
                 </div>
