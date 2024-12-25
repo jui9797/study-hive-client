@@ -1,10 +1,10 @@
 
 
-# StudyHive Web Application
+# StudyHive Web Application🚀
 
 Welcome to the StudyHive Web Application! This platform allows registered users to collaborate on assignments, complete tasks, and grade each other's submissions in a friendly and interactive environment.
 
-## Features
+## Features🌟
 
 1. **User Registration and Login**
    - Secure user authentication.
@@ -37,7 +37,7 @@ Welcome to the StudyHive Web Application! This platform allows registered users 
 7. **Mobile-Friendly Design**
    - Fully responsive layout for seamless use on desktops, tablets, and smartphones.
 
-## Tech Stack
+## Tech Stack✨
 
 - **Frontend**: HTML, CSS, JavaScript, React.js
 - **Backend**: Node.js, Express.js
@@ -51,9 +51,9 @@ Welcome to the StudyHive Web Application! This platform allows registered users 
 
 
 
-## Live Link ##
+## Live Link ##🔗
 
 **live(https://assignment-11-client-c292f.web.app/)**
 
-## Server Link ##
+## Server Link ##🔗
 **live()**
