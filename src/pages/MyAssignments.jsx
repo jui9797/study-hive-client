@@ -3,14 +3,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 
 const MyAssignments = () => {
-    const { user } = useContext(AuthContext)
+    const { user, isDarkMode } = useContext(AuthContext)
 
     const [submits, setSubmits] = useState([])
 
     useEffect(() => {
         axios.get(`http://localhost:5000/submittedAssignments/email?email=${user?.email}`)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data), 
                 setSubmits(res.data)
             })
             .catch(error => console.log(error.message))
@@ -18,7 +18,7 @@ const MyAssignments = () => {
 
     return (
         <div className='my-10 lg:my-20'>
-            <h2 className='text-3xl'>My attempt assignment:{submits.length}</h2>
+            <h2 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-pink-800'}`}>My attempt assignment:{submits.length}</h2>
             <div className='my-4 p-2 bg-pink-400'>
                 <div className="overflow-x-auto">
                     <table className="table bg-pink-100 rounded-none">
@@ -39,12 +39,12 @@ const MyAssignments = () => {
                                submits.map((item,index)=>
                                 <tr key={index}>
                                <th>{index+1}</th>
-                               <td>{item.title}</td>
+                               <td className='font-bold'>{item.title}</td>
                                <td  className={`${item.status === 'Pending' && 'text-amber-500' || item.status === 'Completed' && 'text-green-600'}`}>{item.status}</td>
                                <td>{item.marks}</td>
-                               <td>{item.obtainedMarks
+                               <td className={`${item.status === 'Pending' && 'text-amber-500'}`}>{item.obtainedMarks
                                }</td>
-                               <td>{item.feedback}</td>
+                               <td className={`${item.status === 'Pending' && 'text-amber-500'}`}>{item.feedback}</td>
                            </tr>
                             ) 
                             }

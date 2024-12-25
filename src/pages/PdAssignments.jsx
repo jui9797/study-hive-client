@@ -1,29 +1,31 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
 
 const PdAssignments = () => {
 
     const [pendings, setPendings] = useState([])
+    const {isDarkMode} = useContext(AuthContext)
 
     useEffect(() => {
         axios.get('http://localhost:5000/submittedAssignments')
             .then(res => {
                 const assignments = res.data
-                console.log(assignments)
+                // console.log(assignments)
                 const pendingAssignments = assignments.filter(assignment => assignment.status === "Pending");
                 setPendings(pendingAssignments)
             })
     }, [])
 
     return (
-        <div>
-            <h2 className='text-4xl font-bold my-4 text-center'>Pending assignments: {pendings.length}</h2>
+        <div className={`${isDarkMode? 'text-white' : 'text-pink-800 bg-purple-200 p-4'}`}>
+            <h2 className='text-4xl font-bold my-4 text-center'>Pending assignments</h2>
             <div className='my-10 border-2'>
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
-                        <thead>
+                        <thead className={`${isDarkMode? 'text-white' : 'text-pink-800'}`}>
                             <tr>
                                 <th></th>
                                 <th>Title</th>
@@ -40,12 +42,12 @@ const PdAssignments = () => {
                                 pendings.map((item, index)=>
                                     <tr key={index}>
                                 <th>{index+1}</th>
-                                <td>{item.title}</td>
+                                <td className='font-bold'>{item.title}</td>
                                 <td className={`${item.status === 'Pending' && 'text-amber-500' || item.status === 'Completed' && 'text-green-600'}`}>{item.status}</td>
                                 <td>{item.marks}</td>
-                                <td>{item.obtainedMarks}</td>
+                                <td className={`${item.status === 'Pending' && 'text-amber-500'}`}>{item.obtainedMarks}</td>
                                 <td>{item.submittedUserName}</td>
-                                <td><Link to={`/marks/${item._id}`}><button className='btn'>Give Mark</button></Link></td>
+                                <td><Link to={`/marks/${item._id}`}><button className='btn join-item border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'>Give Mark</button></Link></td>
                             </tr>
                                 )
                             }

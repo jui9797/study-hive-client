@@ -5,6 +5,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import 'animate.css'
 
 const AssignCard = ({item, assignments, setAssignments}) => {
     const {user} =useContext(AuthContext)
@@ -55,23 +56,23 @@ const handleDelete=(id)=>{
 
     return (
         <div>
-            <div className="card  shadow-xl p-4 bg-pink-300 rounded-none">
-                <div className='h-[300px]'>
+            <div className="card  shadow-xl p-4 bg-purple-300 rounded-none animate__animated animate__lightSpeedInRight md:h-[500px]">
+                <div className=''>
                 
                     <img referrerPolicy='no-referrer'
-                        className='w-full h-full object-cover'
+                        className='w-full h-[250px] object-cover'
                         src={thumbnailUrl}
                         alt="thumbnailUrl" />
                 
                 </div>
-                <div className="card-body">
-                    <h2 className="card-title">{title}</h2>
+                <div className=" h-[200px]">
+                    <h2 className="card-title font-bold">{title}</h2>
                     
-                    <p>Type: {difficulty}</p>
-                    <p>Highest Marks: {marks}</p>
-                    <p>Due Date: {dueDate}</p>
-                    <div className="card-actions flex justify-between">
-                        <Link to={`/details/${_id}`}><button className="btn">View Assignment</button></Link>
+                    <p><span className='font-bold mr-2'>Type:</span> {difficulty}</p>
+                    <p><span className='font-bold mr-2'>Highest Marks:</span> {marks}</p>
+                    <p><span className='font-bold mr-2'>Due Date:</span> {dueDate}</p>
+                    <div className="card-actions flex justify-between mt-4">
+                        <Link to={`/details/${_id}`}><button className='btn border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'>View Assignment</button></Link>
                         <div>
                         <button onClick={()=>handleDelete(_id)} className="btn mr-4 text-xl"><RiDeleteBin2Fill /></button>
                         <Link to={`/update/${_id}`}><button className="btn text-xl"><FaEdit /></button></Link>

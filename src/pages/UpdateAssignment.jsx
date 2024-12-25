@@ -4,6 +4,8 @@ import DatePicker from 'react-datepicker';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from 'react-toastify';
 
 const UpdateAssignment = () => {
     const navigate = useNavigate()
@@ -63,11 +65,15 @@ const UpdateAssignment = () => {
     // validation
     if (!isNaN(title)) {
         // Check if title is a number
-        return alert("Assignment title cannot be a number!");
+        return toast.error('Assignment title cannot be a number!', {
+           
+        });
       }
     if (!isNaN(description)) {
         // Check if title is a number
-        return alert("Assignment description cannot be a number!");
+        return toast.error('Assignment description cannot be a number!', {
+            
+        });
       }
 
     // patch method 
@@ -90,7 +96,7 @@ const UpdateAssignment = () => {
 
     return (
         <div>
-            <div className="assignment-form-container bg-pink-300 p-4">
+            <div className="assignment-form-container bg-pink-200 p-4">
                 <h2 className="text-lg font-bold mb-4">Update Assignment Information</h2>
                 <form onSubmit ={handleUpdate} className="space-y-4">
                     {/* Title */}
@@ -207,6 +213,7 @@ const UpdateAssignment = () => {
                     </button>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     );
 };

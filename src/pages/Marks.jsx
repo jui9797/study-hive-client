@@ -1,12 +1,12 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Marks = () => {
     const { id } = useParams()
-    const {user} = useContext(AuthContext)
-    
+    const {user, isDarkMode} = useContext(AuthContext)
+     
     const [assignment, setAssignment] = useState({})
     
 
@@ -45,8 +45,15 @@ const Marks = () => {
      
 
     return (
-        <div>
-            <h2 className='my-4 text-center font-bold text-2xl'>Give him/ her Marks</h2>
+        <div className={`flex flex-col border-2 p-4  items-center ${isDarkMode? 'text-black' : 'text-pink-800'}`}
+        style={{
+            backgroundImage: "url('https://i.ibb.co/nf8z17P/seamless-pattern-vector-of-butterfly-beautiful-tiny-flower-background-v-1509447jpg-bw700.jpg')",
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+          }}
+        >
+            <h2 className={`my-4 font-bold text-2xl`}>Give him/ her Marks</h2>
             <p>Docs URL:
                 <a
                     href={assignment.url}
@@ -56,21 +63,21 @@ const Marks = () => {
                     {assignment.url}
                 </a>
             </p>
-            <p> Note: {assignment.note}</p>
-            <form onSubmit={handleFeedback} className='border-2 p-4 flex flex-col w-1/2 lg:w-1/4'>
+            <p className='mb-2'> Note: {assignment.note}</p>
+            <form onSubmit={handleFeedback} className=' p-4 flex flex-col w-full lg:w-1/3'>
                 <input
                     type="number"
                     name='obtainedMarks'
                     required
                     placeholder="Give Number"
-                    className="input input-bordered input-md w-full max-w-xs my-4" />
+                    className="input input-bordered input-md w-full  my-4" />
                 <input
                     type="text"
                     name='feedback'
                     required
                     placeholder="Give a feedback"
-                    className="input input-bordered input-md w-full max-w-xs" />
-                <button  className='btn mt-4'>Submit</button>
+                    className="input input-bordered input-md w-full " />
+                <button className='btn mt-4 border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'>Submit</button>
             </form>
         </div>
     );

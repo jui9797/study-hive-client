@@ -3,10 +3,14 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
+import Swal from 'sweetalert2';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from 'react-toastify';
+
 
 const CreateAssignments = () => {
 
-const {user} =useContext(AuthContext)
+const {user, isDarkMode} =useContext(AuthContext)
 const [startDate, setStartDate] =useState(new Date())
 
 const handleSubmit=e=>{
@@ -28,34 +32,47 @@ const handleSubmit=e=>{
     const creatorName =form.creatorName.value
     const creatorEmail =form.creatorEmail.value
     const assignment ={title, description, marks, thumbnailUrl, difficulty, dueDate, creatorName, creatorEmail}
-    console.log(assignment)
+    // console.log(assignment)
 
     // validation
     if (!isNaN(title)) {
         // Check if title is a number
-        return alert("Assignment title cannot be a number!");
+       
+        return toast.error('Assignment title cannot be a number!', {
+           
+          });
       }
     if (!isNaN(description)) {
         // Check if title is a number
-        return alert("Assignment description cannot be a number!");
+        return toast.error('Assignment description cannot be a number!', {
+            
+          });
       }
 
     // post a new assignment
     axios.post('http://localhost:5000/assignments', assignment)
     .then(res=>{
-        console.log(res.data)
-        alert('add new assignment in database')
+        // console.log(res.data)
+        ( Swal.fire({
+                            title: "Congrates",
+                            text: "assignment creation is successful",
+                            icon: "success"
+                          }))
     })
     .catch((error) => {
-        console.error('Error adding assignment:', error);
-        alert('Failed to add assignment.');
+        // console.error('Error adding assignment:', error);
+        ( Swal.fire({
+            title: "error",
+            text: "failed to create assignment",
+            icon: "error"
+          }))
     });
 }
 
     return (
         <div>
-            <div className="assignment-form-container bg-pink-300 p-4">
-                <h2 className="text-lg font-bold mb-4">Create Assignment</h2>
+            <div className={`assignment-form-container rounded-lg  p-4 ${isDarkMode? 'bg-gray-800 text-white' : 'bg-blue-200'}`}>
+                <h2 className="text-lg font-bold mb-4">Create Assignment For Others.</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Title */}
                     <div>
@@ -120,7 +137,7 @@ const handleSubmit=e=>{
 
                     {/* Due Date */}
                     <div>
-                        <label className="block text-sm font-medium">Due Date</label>
+                        <label className="block text-sm font-medium ">Due Date</label>
                         <DatePicker
                             dateFormat="MM/dd/yyyy"
                             selected={startDate}
@@ -160,12 +177,13 @@ const handleSubmit=e=>{
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600"
+                        className='btn mt-4 border-none text-white ml-2 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-600 hover:to-orange-400 ...'
                     >
                         Submit Assignment
                     </button>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     );
 };
