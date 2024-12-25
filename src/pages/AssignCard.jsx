@@ -68,7 +68,7 @@ const handleDelete=(id)=>{
                 <div className=" h-[200px]">
                     <h2 className="card-title font-bold">{title}</h2>
                     
-                    <p><span className='font-bold mr-2'>Type:</span> {difficulty}</p>
+                    <p><span className='font-bold mr-2'>Difficulty Level:</span> {difficulty}</p>
                     <p><span className='font-bold mr-2'>Highest Marks:</span> {marks}</p>
                     <p><span className='font-bold mr-2'>Due Date:</span> {dueDate}</p>
                     <div className="card-actions flex justify-between mt-4">

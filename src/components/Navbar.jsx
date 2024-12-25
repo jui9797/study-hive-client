@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
+import Spinner from './Spinner';
 
 
 const Navbar = () => {
@@ -57,7 +58,7 @@ const Navbar = () => {
                     <div className="">
                         {loading ? (
                             <div className="flex items-center">
-                                <p>Loading...</p>
+                                <Spinner></Spinner>
                             </div>
                         ) : user ? (
                             <>

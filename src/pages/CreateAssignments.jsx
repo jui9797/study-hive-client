@@ -6,12 +6,14 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 const CreateAssignments = () => {
 
 const {user, isDarkMode} =useContext(AuthContext)
 const [startDate, setStartDate] =useState(new Date())
+const navigate =useNavigate()
 
 const handleSubmit=e=>{
     e.preventDefault()
@@ -57,7 +59,10 @@ const handleSubmit=e=>{
                             title: "Congrates",
                             text: "assignment creation is successful",
                             icon: "success"
-                          }))
+                          })).then(() => {
+                            
+                            navigate("/assignments");
+                          });
     })
     .catch((error) => {
         // console.error('Error adding assignment:', error);

@@ -13,7 +13,7 @@ const AssignmentGrid = () => {
        
         axios.get('http://localhost:5000/limitAssignments')
         .then(res=>{
-            console.log(res.data)
+            // console.log(res.data)
             setAssignments(res.data)
         })
 

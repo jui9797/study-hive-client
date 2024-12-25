@@ -1,19 +1,20 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import {  useParams } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Marks = () => {
     const { id } = useParams()
     const {user, isDarkMode} = useContext(AuthContext)
-     
+     const navigate =useNavigate()
     const [assignment, setAssignment] = useState({})
     
 
     useEffect(() => {
         axios.get(`http://localhost:5000/submittedAssignments/${id}`)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setAssignment(res.data)
             })
             .catch(error => console.log(error))
@@ -23,19 +24,43 @@ const Marks = () => {
         e.preventDefault()
         const obtainedMarks =e.target.obtainedMarks.value
         const feedback =e.target.feedback.value
-        console.log(obtainedMarks, feedback)
+        // console.log(obtainedMarks, feedback)
         if(assignment.submittedUserEmail === user.email){
-            return alert('You cannot examine your own assignment')
+            // return alert('You cannot examine your own assignment')
+            return Swal.fire({
+                    title: "Sorry",
+                    text: "You cannot examine your own assignment.",
+                    icon: "error"
+                  }).then(() => {
+                    
+                    navigate("/pdAssignments");
+                  });
         }
 
       if(assignment.status == 'Completed') {
-        return alert('Already marked')
+        // return alert('Already marked')
+        return Swal.fire({
+                title: "Sorry",
+                text: "Already marked",
+                icon: "error"
+              }).then(() => {
+                    
+                navigate("/pdAssignments");
+              });
       }
       const status ='Completed'
       axios.patch(`http://localhost:5000/status/${id}`,{status, obtainedMarks, feedback})
       .then(data=> {
         if(data.data){
-            alert('success status')
+            // alert('success status')
+            Swal.fire({
+                    title: "Success",
+                    text: "success status.",
+                    icon: "success"
+                  }).then(() => {
+                    
+                    navigate("/pdAssignments");
+                  });
         }
       })
     }

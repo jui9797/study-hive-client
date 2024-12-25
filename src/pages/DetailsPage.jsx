@@ -6,7 +6,7 @@ import { motion } from "motion/react"
 
 
 const DetailsPage = () => {
-    const { user, isDarkMode } = useContext(AuthContext)
+    const { isDarkMode } = useContext(AuthContext)
     const { id } = useParams()
     const [assignment, setAssignment] = useState({})
 

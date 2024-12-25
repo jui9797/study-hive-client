@@ -10,6 +10,7 @@ const Submission = () => {
     const {id} =useParams()
     const navigate =useNavigate()
     const [assignment, setAssignment] = useState({})
+    
 
     useEffect(() => {
         axios.get(`http://localhost:5000/assignments/${id}`)
@@ -40,11 +41,14 @@ const handleSubmit=e=>{
 
 //  validation email
 if(creatorUserEmail === user.email){
- return Swal.fire({
-    title: "sorry",
-    text: "You can not submit ",
-    icon: "error"
-  })
+    return Swal.fire({
+        title: "Sorry",
+        text: "You cannot submit.",
+        icon: "error"
+      }).then(() => {
+        // Redirect to the homepage
+        navigate("/");
+      });
 }
 
  axios.post('http://localhost:5000/submittedAssignments', submitData)

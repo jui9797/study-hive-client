@@ -48,7 +48,7 @@ const UpdateAssignment = () => {
        const creatorName =form.creatorName.value
        const creatorEmail =form.creatorEmail.value
        const assignment ={title, description, marks, thumbnailUrl, difficulty, dueDate, creatorName, creatorEmail}
-       console.log(assignment)
+    //    console.log(assignment)
 
     //    validation of user
     if(user.email != creatorEmail){
@@ -79,7 +79,7 @@ const UpdateAssignment = () => {
     // patch method 
     axios.patch(`http://localhost:5000/assignments/${id}`, assignment)
     .then(res=>{
-        console.log(res.data)
+        // console.log(res.data)
         Swal.fire({
                         title: "Great",
                         text: "Update process is successfull",
@@ -88,7 +88,7 @@ const UpdateAssignment = () => {
                       navigate('/assignments');
     })
     .catch(error=>{
-        console.log(error.message)
+        // console.log(error.message)
         
     })
 
