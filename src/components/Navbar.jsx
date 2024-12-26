@@ -92,7 +92,7 @@ const Navbar = () => {
                                         </ul>
                                     </div>
                                     <div>
-                                        <button onClick={logOut} className='btn border-none text-white ml-2 bg-[#0AB99D] rounded-lg'>Log Out</button>
+                                        <button onClick={logOut} className='btn p-1 py-1 lg:p-2 border-none text-white ml-2 bg-[#0AB99D] rounded-lg'>Log Out</button>
                                     </div>
                                 </div>
                             </>
@@ -100,8 +100,8 @@ const Navbar = () => {
                             <>
                                 {/* user log out div */}
                                 <div className=''>
-                                    <button className='btn border-none text-white ml-2 bg-[#0AB99D] rounded-lg'><Link to='/register'>Register</Link></button>
-                                    <button className='btn border-none text-white ml-2 bg-[#0AB99D] rounded-lg'><Link to='/login'>Login</Link></button>
+                                    <button className='btn p-1 py-1 lg:p-2 border-none text-white ml-2 bg-[#0AB99D] rounded-lg'><Link to='/register'>Register</Link></button>
+                                    <button className='btn p-1 lg:p-2 border-none text-white ml-2 bg-[#0AB99D] rounded-lg'><Link to='/login'>Login</Link></button>
                                 </div>
                             </>
                         )}
