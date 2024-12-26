@@ -19,7 +19,7 @@ useEffect(()=>{
             return response
         },
         error=>{
-            console.log('error caught in intercepter' ,'error')
+            // console.log('error caught in intercepter' ,'error')
             if(error.status === 401 || error.status === 403){
                 // console.log('need to logout user')
                 logOut()
@@ -27,7 +27,7 @@ useEffect(()=>{
                     // console.log('logged out user')
                     navigate('/login')
                 })
-                .catch(error => console.log(error))
+                
             }
             return Promise.reject(error)
         }

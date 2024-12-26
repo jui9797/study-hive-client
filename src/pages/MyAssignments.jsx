@@ -14,7 +14,7 @@ const MyAssignments = () => {
                 // console.log(res) 
                 setSubmits(res.data)
             })
-            .catch(error => console.log(error, 'error'))
+            // .catch(error => )
     },[user.email, axiosSecure])
 // console.log(user?.email)
     return (

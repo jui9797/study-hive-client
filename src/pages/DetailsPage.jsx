@@ -16,7 +16,7 @@ const DetailsPage = () => {
                 // console.log(res.data)
                 setAssignment(res.data)
             })
-            .catch(error => console.log(error.message))
+            // .catch(error =>)
 
     }, [id])
 

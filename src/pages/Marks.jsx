@@ -17,7 +17,7 @@ const Marks = () => {
                 // console.log(res.data)
                 setAssignment(res.data)
             })
-            .catch(error => console.log(error))
+            // .catch(error => console.log(error))
     }, [id])
 
     const handleFeedback=e=>{
