@@ -56,4 +56,4 @@ Welcome to the StudyHive Web Application! This platform allows registered users 
 **live(https://assignment-11-client-c292f.web.app/)**
 
 ## Server Link ##🔗
-**live()**
+**live(https://assignment-11-server-mu-five.vercel.app/)**
