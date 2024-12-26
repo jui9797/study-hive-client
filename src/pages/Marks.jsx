@@ -12,7 +12,7 @@ const Marks = () => {
     
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/submittedAssignments/${id}`)
+        axios.get(`https://assignment-11-server-mu-five.vercel.app/submittedAssignments/${id}`)
             .then(res => {
                 // console.log(res.data)
                 setAssignment(res.data)
@@ -49,7 +49,7 @@ const Marks = () => {
               });
       }
       const status ='Completed'
-      axios.patch(`http://localhost:5000/status/${id}`,{status, obtainedMarks, feedback})
+      axios.patch(`https://assignment-11-server-mu-five.vercel.app/status/${id}`,{status, obtainedMarks, feedback})
       .then(data=> {
         if(data.data){
             // alert('success status')

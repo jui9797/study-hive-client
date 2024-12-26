@@ -52,7 +52,7 @@ const handleSubmit=e=>{
       }
 
     // post a new assignment
-    axios.post('http://localhost:5000/assignments', assignment)
+    axios.post('https://assignment-11-server-mu-five.vercel.app/assignments', assignment)
     .then(res=>{
         // console.log(res.data)
         ( Swal.fire({

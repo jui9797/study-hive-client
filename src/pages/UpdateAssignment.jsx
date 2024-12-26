@@ -19,7 +19,7 @@ const UpdateAssignment = () => {
     
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/assignments/${id}`)
+        axios.get(`https://assignment-11-server-mu-five.vercel.app/assignments/${id}`)
             .then(res => {
                 // console.log(res.data)
                 setAssignment(res.data)
@@ -77,7 +77,7 @@ const UpdateAssignment = () => {
       }
 
     // patch method 
-    axios.patch(`http://localhost:5000/assignments/${id}`, assignment)
+    axios.patch(`https://assignment-11-server-mu-five.vercel.app/assignments/${id}`, assignment)
     .then(res=>{
         // console.log(res.data)
         Swal.fire({

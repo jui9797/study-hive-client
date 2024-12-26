@@ -35,7 +35,7 @@ const handleDelete=(id)=>{
                 )
             }
             // delete assignment from database
-            axios.delete(`http://localhost:5000/assignments/${id}`)
+            axios.delete(`https://assignment-11-server-mu-five.vercel.app/assignments/${id}`)
             .then((res) => {
                 const data = res.data;
                 // console.log(data);

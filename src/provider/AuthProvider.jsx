@@ -49,14 +49,14 @@ const AuthProvider = ({children}) => {
           // console.log('State captured',currentUser?.email)
           if(currentUser?.email){
             const user ={email:currentUser.email}
-            axios.post('http://localhost:5000/jwt', user, {withCredentials:true})
+            axios.post('https://assignment-11-server-mu-five.vercel.app/jwt', user, {withCredentials:true})
             .then(res=>{
               // console.log('login token', res.data)
               setLoading(false);
             })
           }
           else{
-            axios.post('http://localhost:5000/logOut', {}, {withCredentials:true})
+            axios.post('https://assignment-11-server-mu-five.vercel.app/logOut', {}, {withCredentials:true})
             .then(res=>{
               // console.log('logout', res.data)
               setLoading(false);

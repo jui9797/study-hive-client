@@ -11,7 +11,7 @@ const AssignmentGrid = () => {
 
     useEffect(()=>{
        
-        axios.get('http://localhost:5000/limitAssignments')
+        axios.get('https://assignment-11-server-mu-five.vercel.app/limitAssignments')
         .then(res=>{
             // console.log(res.data)
             setAssignments(res.data)

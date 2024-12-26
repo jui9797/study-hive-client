@@ -11,7 +11,7 @@ const DetailsPage = () => {
     const [assignment, setAssignment] = useState({})
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/assignments/${id}`)
+        axios.get(`https://assignment-11-server-mu-five.vercel.app/assignments/${id}`)
             .then(res => {
                 // console.log(res.data)
                 setAssignment(res.data)

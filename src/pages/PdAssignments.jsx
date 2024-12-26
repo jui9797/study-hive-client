@@ -9,7 +9,7 @@ const PdAssignments = () => {
     const {isDarkMode} = useContext(AuthContext)
 
     useEffect(() => {
-        axios.get('http://localhost:5000/submittedAssignments')
+        axios.get('https://assignment-11-server-mu-five.vercel.app/submittedAssignments')
             .then(res => {
                 const assignments = res.data
                 // console.log(assignments)

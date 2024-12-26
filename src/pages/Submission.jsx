@@ -13,7 +13,7 @@ const Submission = () => {
     
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/assignments/${id}`)
+        axios.get(`https://assignment-11-server-mu-five.vercel.app/assignments/${id}`)
             .then(res => {
                 // console.log(res.data)
                 setAssignment(res.data)
@@ -51,7 +51,7 @@ if(creatorUserEmail === user.email){
       });
 }
 
- axios.post('http://localhost:5000/submittedAssignments', submitData)
+ axios.post('https://assignment-11-server-mu-five.vercel.app/submittedAssignments', submitData)
     .then(res=>{
         // console.log(res.data)
         Swal.fire({

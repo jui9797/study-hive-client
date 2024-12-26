@@ -14,7 +14,7 @@ const Assignments = () => {
     const [search, setSearch] = useState('')
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/assignments?filter=${filter}&search=${search}`)
+        axios.get(`https://assignment-11-server-mu-five.vercel.app/assignments?filter=${filter}&search=${search}`)
             .then(res => {
                 // console.log(res.data)
                 setAssignments(res.data)
