@@ -39,7 +39,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content text-gray-800 bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             {links}
                         </ul>
                     </div>
@@ -85,7 +85,7 @@ const Navbar = () => {
                                         <ul
                                             tabIndex={0}
                                             className={`menu menu-sm dropdown-content ${
-                                                isDarkMode ? 'bg-black' : 'bg-base-100'
+                                                isDarkMode ? 'bg-gray-800 text-white' : 'bg-base-100'
                                               } rounded-box z-[1] mt-3 w-52 p-2 shadow`}>
                                             <NavLink to='/createAssignment'>Create Assignment</NavLink>
                                             <NavLink to='/myAssignments'>My Attempted Assignments</NavLink>

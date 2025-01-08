@@ -46,7 +46,38 @@ Welcome to the StudyHive Web Application! This platform allows registered users 
 - **Authentication**: JSON Web Tokens (JWT)
 
 
+## Dependencies 🔧
 
+- **Frontend:**
+  - React.js
+  - React Router DOM
+  - Daisy UI
+  - Axios
+
+- **Backend:**
+  - Express.js
+  - Mongoose
+  - JWT (jsonwebtoken)
+  - dotenv
+  - bcrypt.js
+  - cors
+
+---
+
+## Getting Started 🚀
+
+### **Local Setup Guide**
+
+#### Prerequisites:
+- **Node.js** (v16 or higher)
+- **MongoDB** (Ensure it is installed and running locally or use a cloud-based MongoDB service)
+
+### **Frontend Setup**
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/studyhive-client.git
+   cd studyhive-client
 
 
 
