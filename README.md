@@ -79,8 +79,31 @@ Welcome to the StudyHive Web Application! This platform allows registered users 
    git clone https://github.com/your-username/studyhive-client.git
    cd studyhive-client
 
+2.Install dependencies:
+npm install
 
+3.Start the development server:
+npm start
 
+4.The frontend will run on http://localhost:5000 by default.
+
+### **Backend Setup**
+1.clone the repository
+git clone https://github.com/your-username/studyhive-server.git
+cd studyhive-server
+
+2.Install dependencies
+npm install
+
+3.Create a .env file in the root directory and add the following:
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+
+4.Start the server
+npm run start
+
+5. The backend will run on http://localhost:5000 by default.
 
 ## Live Link ##🔗
 
