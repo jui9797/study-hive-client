@@ -3,6 +3,7 @@
 import AssignmentGrid from './AssignmentGrid';
 import Banner from './Banner';
 import Faq from './Faq';
+import Newsletter from './Newsletter';
 import WhyChoose from './whyChoose';
 
 
@@ -22,6 +23,9 @@ const Home = () => {
           </div>
           <div className='my-10 lg:my-20'>
           <Faq></Faq>
+          </div>
+          <div className='my-10 lg:my-20'>
+            <Newsletter></Newsletter>
           </div>
         </div>
     );

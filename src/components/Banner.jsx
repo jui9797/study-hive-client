@@ -8,7 +8,7 @@ const Banner = () => {
     return (
         <div>
             <div
-                className="hero  sm:h-full md:h-[400px] lg:h-[500px]"
+                className="hero  sm:h-full md:h-[400px] lg:h-[500px] mt-10"
                 style={{
                     backgroundImage: `url(${bannerImg})`,
 
@@ -21,7 +21,7 @@ const Banner = () => {
                     <h1
 
 
-                        className=" mb-3 lg:mb-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold animate__animated animate__fadeInDown"
+                        className=" mb-3 lg:mb-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold animate__animated animate__fadeInDown pt-5"
                         >
                         Collaborate, Create, Conquer
                     </h1>

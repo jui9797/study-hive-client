@@ -20,7 +20,7 @@ const PdAssignments = () => {
 
     return (
         <div className={`${isDarkMode? 'text-base-300' : 'text-gray-800 bg-gray-50 p-4'}`}>
-            <h2 className='text-4xl font-bold my-4 text-center'>Pending assignments</h2>
+            <h2 className='text-4xl font-bold my-4 text-center  mt-12'>Pending assignments</h2>
             <div className='my-10 border-2 border-[#0AB99D]'>
                 <div className="overflow-x-auto">
                     <table className="table">

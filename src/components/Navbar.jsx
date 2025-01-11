@@ -19,8 +19,8 @@ const Navbar = () => {
 
 
     return (
-        <div className='w-11/12 mx-auto'>
-            <div className={`navbar ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-base-100 text-gray-700'}`}>
+        <div className='w-11/12 mx-auto fixed top-0 z-50'>
+            <div className={`navbar ${isDarkMode ? 'bg-gray-800 text-white ml-4 md:ml-8 lg:ml-16' : 'bg-base-200 text-gray-700'}`}>
                 <div className="navbar-start ">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -92,7 +92,7 @@ const Navbar = () => {
                                         </ul>
                                     </div>
                                     <div>
-                                        <button onClick={logOut} className='btn p-1 py-1 lg:p-2 border-none text-white ml-2 bg-[#0AB99D] rounded-lg'>Log Out</button>
+                                        <button onClick={logOut} className='btn p-1  lg:p-2 border-none text-white ml-2 bg-[#0AB99D] rounded-lg'>Log Out</button>
                                     </div>
                                 </div>
                             </>

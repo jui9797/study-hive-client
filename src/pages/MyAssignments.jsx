@@ -19,7 +19,7 @@ const MyAssignments = () => {
 // console.log(user?.email)
     return (
         <div className='my-10 lg:my-20'>
-            <h2 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-[#0AB99D]'}`}>My attempt assignment:{submits.length}</h2>
+            <h2 className={`text-3xl font-bold mt-16 ${isDarkMode ? 'text-white' : 'text-[#0AB99D]'}`}>My attempt assignment:{submits.length}</h2>
             <div className='my-4 p-2 bg-[#0AB99D]'>
                 <div className="overflow-x-auto">
                     <table className={`table  rounded-none ${isDarkMode? 'bg-gray-300' :'bg-gray-50'}`}>

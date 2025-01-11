@@ -92,7 +92,7 @@ const Register = () => {
     }
 
     return (
-        <div className='rounded-lg'>
+        <div className='rounded-lg mt-10'>
             <div className="hero  min-h-screen bg-[url('https://i.ibb.co.com/Gt4KQXP/pngtree-wooden-texture-login-form-enhancing-aesthetic-appeal-image-13918200.png')] my-10">
             <div className="hero-overlay bg-opacity-50"></div>
                 <div className="hero-content flex-col lg:flex-row-reverse gap-12">
