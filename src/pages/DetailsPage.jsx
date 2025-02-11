@@ -60,7 +60,7 @@ const DetailsPage = () => {
                         <p className='my-2'><span className='font-bold mr-2'>Highest Marks:</span>{assignment?.marks}</p>
                         <p className='my-2'><span className='font-bold mr-2'>Creator Name:</span>{assignment?.creatorName}</p>
                         <p className='my-2'><span className='font-bold mr-2'>Creator Email:</span>{assignment?.creatorEmail}</p>
-                        <Link to={`/submission/${assignment._id}`}><button className="btn bg-[#0AB99D] text-white border-none">Take assignment</button></Link>
+                        <Link to={`/submission/${assignment._id}`}><button className="btn bg-[#0AB99D] text-white hover:bg-transparent hover:text-[#0AB99D] hover:border-2 hover:border-[#0AB99D]">Take assignment</button></Link>
                         
                         
                     </div>

@@ -116,7 +116,7 @@ const handleSubmit =e=>{
                             </div>
                             
                             <div className="form-control mt-6">
-                                <button className="btn bg-[#0AB99D] text-white">Login</button>
+                                <button className="btn bg-[#0AB99D] text-white hover:bg-transparent hover:text-[#0AB99D] hover:border-2 hover:border-[#0AB99D] font-bold">Submit</button>
                             </div>
                         </form>
                     </div>

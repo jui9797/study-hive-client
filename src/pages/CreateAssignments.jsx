@@ -182,7 +182,7 @@ const handleSubmit=e=>{
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className='btn mt-4 border-none text-white ml-2 bg-[#0AB99D]'
+                        className='btn mt-4  text-white ml-2 bg-[#0AB99D] hover:bg-transparent hover:text-[#0AB99D] hover:border-2 hover:border-[#0AB99D]'
                     >
                         Submit Assignment
                     </button>

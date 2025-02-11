@@ -26,7 +26,7 @@ const Assignments = () => {
             <div className='flex flex-col lg:flex-row gap-4  justify-between '>
                 <div className='text-left  lg:w-1/2'>
                 <h2  className={`text-4xl font-bold mt-12  my-4 animate__animated animate__zoomIn ${isDarkMode? 'text-white' : 'text-gray-700'} `}>All Assignments</h2>
-                <p className='text-gray-400'>Create and manage assignments easily. Submit your work, review others submissions, and grade your friends assignments in a collaborative environment.</p>
+                <p className='text-gray-500'>Create and manage assignments easily. Submit your work, review others submissions, and grade your friends assignments in a collaborative environment.</p>
                 </div>
                <div className='flex gap-4 '>
                <div>

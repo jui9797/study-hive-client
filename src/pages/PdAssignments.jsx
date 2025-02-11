@@ -37,7 +37,7 @@ const PdAssignments = () => {
                     </>
                     :
                     <>
-                        <h2 className='text-4xl font-bold my-4 text-center  mt-12'>Pending assignments</h2>
+                        <h2 className='text-4xl font-bold my-4 text-center  mt-12 lg:mt-16'>Pending assignments</h2>
                         <div className='my-10 border-2 border-[#0AB99D]'>
                             <div className="overflow-x-auto">
                                 <table className="table">
@@ -64,7 +64,7 @@ const PdAssignments = () => {
                                                     <td>{item.marks}</td>
                                                     <td className={`${item.status === 'Pending' && 'text-amber-500'}`}>{item.obtainedMarks}</td>
                                                     <td>{item.submittedUserName}</td>
-                                                    <td><Link to={`/marks/${item._id}`}><button className='btn join-item border-none text-white ml-2 bg-[#0AB99D]'>Give Mark</button></Link></td>
+                                                    <td><Link to={`/marks/${item._id}`}><button className='btn join-item  text-white ml-2 bg-[#0AB99D] hover:bg-transparent hover:text-[#0AB99D] hover:border-2 hover:border-[#0AB99D]'>Give Mark</button></Link></td>
                                                 </tr>
                                             )
                                         }

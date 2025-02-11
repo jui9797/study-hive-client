@@ -72,7 +72,7 @@ const handleDelete=(id)=>{
                     <p className='text-gray-500'><span className='font-bold mr-2'>Highest Marks:</span> {marks}</p>
                     <p className='text-gray-500'><span className='font-bold mr-2'>Due Date:</span> {dueDate}</p>
                     <div className="card-actions flex justify-between mt-4">
-                        <Link to={`/details/${_id}`}><button className='btn border-none text-white ml-2 bg-[#0AB99D] hover:text-[#0AB99D] hover:border-2 hover:border-[#0AB99D]'>View Assignment</button></Link>
+                        <Link to={`/details/${_id}`}><button className='btn text-white ml-2 bg-[#0AB99D] hover:text-[#0AB99D] hover:border-2 hover:border-[#0AB99D] hover:bg-transparent'>View Assignment</button></Link>
                         <div>
                         <button onClick={()=>handleDelete(_id)} className="btn mr-4 text-xl text-[#0AB99D]  w-fit transition-all shadow-[3px_3px_0px_gray] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] rounded-lg border-2 border-[#0AB99D]"><RiDeleteBin2Fill /></button>
                         <Link to={`/update/${_id}`}><button className="px-6 py-3 font-medium bg-[#0AB99D] text-white w-fit transition-all shadow-[3px_3px_0px_gray] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] rounded-lg">

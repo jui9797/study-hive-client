@@ -106,7 +106,7 @@ if(creatorUserEmail === user.email){
                                 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn bg-[#0AB99D] text-white">Submit</button>
+                                <button className="btn bg-[#0AB99D] text-white hover:bg-transparent hover:text-[#0AB99D] hover:border-2 hover:border-[#0AB99D]">Submit</button>
                             </div>
                         </form>
                     </div>
