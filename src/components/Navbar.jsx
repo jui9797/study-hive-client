@@ -46,7 +46,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className=" text-xl font-bold italic text-white ">Study<span className={isDarkMode ? 'text-[#0AB99D]' : 'text-gray-700'}>Hive</span></a>
+                    <a href='/' className=" text-xl font-bold italic text-white ">Study<span className={isDarkMode ? 'text-[#0AB99D]' : 'text-gray-700'}>Hive</span></a>
                     {/* theme button */}
                     <button className='border-2 rounded-full p-2 lg:ml-2' onClick={toggleTheme}>
                         {isDarkMode ? <MdLightMode /> : <MdDarkMode />}

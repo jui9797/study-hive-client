@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -8,8 +8,8 @@ const Newsletter = () => {
     const handleSubmit = e => {
         e.preventDefault()
         const form =e.target
-        const subscription = form.text.value
-        console.log(subscription);
+        // const subscription = form.email.value
+        // console.log(subscription);
         Swal.fire({
             title: "Congrates",
             text: `${form.email.value} subscribed successfuly`,

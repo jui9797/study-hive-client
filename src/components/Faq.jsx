@@ -15,8 +15,8 @@ const Faq = () => {
             </h2>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
                 {/* faq img div */}
-               <div className=''>
-                <Lottie animationData={faqimg} style={{ width: '100%', height: '450px' }}>
+               <div className=' h-[300px] lg:h-[400px]'>
+                <Lottie animationData={faqimg} style={{ width: '100%', height: '100%' }}>
              </Lottie>
                </div>
                 {/* faq div*/}
