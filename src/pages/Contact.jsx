@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2'
-import contactImg from '../assets/contact.jpg'
+import contactImg from '../assets/contact-us.jpg'
 import mentor1 from '../assets/mentor-1.jpg'
 import mentor2 from '../assets/mentor-2.jpg'
 import mentor3 from '../assets/mentor-3.jpg'
@@ -67,6 +67,7 @@ const handleSubmit =e=>{
                         We believe in collaborative learning! If you have ideas, need assistance, or want to be a part of our growing study community, reach out today. Let’s learn, grow, and succeed together!
                         </p>
                         <h1 className=" text-2xl lg:text-4xl font-bold text-gray-700">Our Mentor</h1>
+                        <p className='py-4 text-gray-700'>Get guidance from experienced mentors who are passionate about helping you succeed. Learn from industry experts, receive valuable feedback, and enhance your skills through personalized mentorship. Our mentors are here to help you every step of the way. Get personalized guidance, expert advice, and hands-on learning from professionals who care about your success.</p>
                         {/* mentor div */}
                         <div className='grid grid-cols-2 lg:grid-cols-4 mt-4 gap-4 text-gray-700'>
                         <div className='flex flex-col justify-center items-center'>
