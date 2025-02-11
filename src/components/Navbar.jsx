@@ -54,7 +54,7 @@ const Navbar = () => {
                 </div>
                 <div className='navbar-end'>
                     <div className="hidden lg:flex ">
-                        <ul className="menu menu-horizontal px-1 space-x-6">
+                        <ul className="menu menu-horizontal px-1 space-x-4">
                             {links}
                         </ul>
                     </div>
@@ -95,7 +95,7 @@ const Navbar = () => {
                                         </ul>
                                     </div>
                                     <div>
-                                        <button onClick={logOut} className='btn p-1  lg:p-2  text-white ml-2 border-2 border-white rounded-lg bg-transparent'>Log Out</button>
+                                        <button onClick={logOut} className='btn p-1  lg:p-2  text-white ml-2 border-2 border-white rounded-lg bg-transparent tracking-wider transition-all duration-300 hover:bg-white hover:text-[#0AB99D] hover:border-none font-bold'>Log Out</button>
                                     </div>
                                 </div>
                             </>
@@ -103,8 +103,8 @@ const Navbar = () => {
                             <>
                                 {/* user log out div */}
                                 <div className=''>
-                                    <button className='btn p-1 py-1 lg:p-2  text-white ml-2 border-2 border-white rounded-lg bg-transparent'><Link to='/register'>Register</Link></button>
-                                    <button className='btn p-1 lg:p-2 text-white ml-2 border-2 border-white rounded-lg bg-transparent'><Link to='/login'>Login</Link></button>
+                                    <button className='btn p-1 py-1 lg:p-2  text-white ml-2 border-2 border-white rounded-lg bg-transparent tracking-wider transition-all duration-300 hover:bg-white hover:text-[#0AB99D] hover:border-none font-bold'><Link to='/register'>Register</Link></button>
+                                    <button className='btn p-1 lg:p-2 text-white ml-2 border-2 border-white rounded-lg bg-transparent tracking-wider transition-all duration-300 hover:bg-white hover:text-[#0AB99D] hover:border-none font-bold'><Link to='/login'>Login</Link></button>
                                 </div>
                             </>
                         )}

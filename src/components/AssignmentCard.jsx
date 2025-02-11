@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const AssignmentCard = ({assign}) => {
-    const {_id, title, thumbnailUrl, dueDate, difficulty, description} = assign || {}
+    const {_id, title, thumbnailUrl, description} = assign || {}
     return (
         <div>
             <div className="card bg-gray-100 shadow-xl">
@@ -13,18 +13,17 @@ const AssignmentCard = ({assign}) => {
                         alt="Shoes" />
                 </div>
                 <div className="card-body h-[288px]">
+                    <div className='h-[150px]  mb-4'>
                     <h2 className="card-title">{`${title.substring(0, 50)}...`}</h2>
-                    <div className='flex gap-1'>
-                    <p className='text-gray-800'>Due Date:</p>
-                    <p className='text-gray-500'>{dueDate}</p>
+                        <div className='text-gray-500'>
+                        <p> {`${description.substring(0, 80)}...`}</p>
                     </div>
-                    
-                    
-                    <div className='text-gray-500'>
-                        <p><span className='text-gray-800'>Description:</span> {`${description.substring(0, 80)}...`}</p>
                     </div>
                     <div className="card-actions">
-                    <Link to={`/details/${_id}`}><button className='btn border-none text-white ml-2 bg-[#0AB99D]'>See More</button></Link>
+                    <button className="relative overflow-hidden rounded-lg bg-[#0AB99D] text-white px-6 py-3  uppercase tracking-wider transition-all duration-300 hover:bg-gray-300 hover:text-[#0AB99D] font-bold">
+                <Link to={`/details/${_id}`}>See More</Link>
+              </button>
+                    {/* <Link to={`/details/${_id}`}><button className='btn border-none text-white ml-2 bg-[#0AB99D]'>See More</button></Link> */}
                     </div>
                 </div>
             </div>

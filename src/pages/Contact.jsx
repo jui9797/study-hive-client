@@ -1,9 +1,41 @@
+import Swal from 'sweetalert2'
 import contactImg from '../assets/contact.jpg'
 import mentor1 from '../assets/mentor-1.jpg'
 import mentor2 from '../assets/mentor-2.jpg'
 import mentor3 from '../assets/mentor-3.jpg'
 import mentor4 from '../assets/mentor-4.jpg'
 const Contact = () => {
+
+const handleSubmit =e=>{
+    e.preventDefault()
+    const form = e.target
+       const name = form.name.value
+       const email = form.email.value
+       const subject = form.subject.value
+       const note = form.note.value
+       const userInfo = {name, email, subject, note}
+       console.log(userInfo)
+    //    Todo: save data in database
+    Swal.fire({
+        title: "Thank you, we will contact you soon",
+        showClass: {
+          popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `
+        },
+        hideClass: {
+          popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+          `
+        }
+      });
+      form.reset();
+}
+
     return (
         <>
             {/* banner */}
@@ -56,31 +88,31 @@ const Contact = () => {
                         </div>
                     </div>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-lg">
-                        <form className="card-body w-full">
+                        <form onSubmit={handleSubmit} className="card-body w-full">
                             <h1 className='text-xl font-bold text-gray-700'>Fill the form</h1>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" placeholder="Write your name" className="input input-bordered" required />
+                                <input type="text" name='name' placeholder="Write your name" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" className="input input-bordered" required />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Subject</span>
                                 </label>
-                                <input type="text" placeholder="write a subject" className="input input-bordered" required />
+                                <input type="text" name='subject' placeholder="write a subject" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Note</span>
                                 </label>
-                                <textarea type="text" placeholder="write a note" className="input input-bordered" required />
+                                <textarea type="text" name='note' placeholder="write a note" className="input input-bordered" required />
                             </div>
                             
                             <div className="form-control mt-6">
