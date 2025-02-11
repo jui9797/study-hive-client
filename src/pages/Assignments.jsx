@@ -22,7 +22,7 @@ const Assignments = () => {
     }, [filter, search])
 
     return (
-        <div className='my-10 lg:my-20'>
+        <div className='my-10 lg:my-20 px-4'>
             <div className='flex flex-col lg:flex-row gap-4  justify-between '>
                 <div className='text-left  lg:w-1/2'>
                 <h2  className={`text-4xl font-bold mt-12  my-4 animate__animated animate__zoomIn ${isDarkMode? 'text-white' : 'text-gray-700'} `}>All Assignments</h2>
@@ -36,7 +36,7 @@ const Assignments = () => {
                         onChange={(e) => setFilter(e.target.value)}
                         defaultValue="" // Default value for placeholder
                     >
-                        <option className='text-gray-700' value="" disabled>
+                        <option className='text-gray-600' value="" disabled>
                             Select difficulty
                         </option>
                         <option className='text-[#0AB99D]' value="easy">Easy</option>

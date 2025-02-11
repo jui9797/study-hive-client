@@ -23,7 +23,7 @@ const AssignmentCard = ({assign}) => {
                     <button className="relative overflow-hidden rounded-lg bg-[#0AB99D] text-white px-6 py-3  uppercase tracking-wider transition-all duration-300 hover:bg-gray-300 hover:text-[#0AB99D] font-bold">
                 <Link to={`/details/${_id}`}>See More</Link>
               </button>
-                    {/* <Link to={`/details/${_id}`}><button className='btn border-none text-white ml-2 bg-[#0AB99D]'>See More</button></Link> */}
+                    
                     </div>
                 </div>
             </div>
