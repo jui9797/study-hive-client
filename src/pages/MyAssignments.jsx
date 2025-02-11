@@ -18,7 +18,7 @@ const MyAssignments = () => {
     },[user.email, axiosSecure])
 // console.log(user?.email)
     return (
-        <div className='my-10 lg:my-20'>
+        <div className='my-10 lg:my-20 p-4'>
             <h2 className={`text-3xl font-bold mt-16 ${isDarkMode ? 'text-white' : 'text-[#0AB99D]'}`}>My attempt assignment:{submits.length}</h2>
             <div className='my-4 p-2 bg-[#0AB99D]'>
                 <div className="overflow-x-auto">

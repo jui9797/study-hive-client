@@ -95,7 +95,7 @@ const UpdateAssignment = () => {
     }
 
     return (
-        <div className='py-10 text-gray-700 mt-12'>
+        <div className='py-10 text-gray-700 mt-12 p-4'>
             <div className="assignment-form-container bg-green-100 p-4">
                 <h2 className="text-lg font-bold mb-4">Update Assignment Information</h2>
                 <form onSubmit ={handleUpdate} className="space-y-4">
