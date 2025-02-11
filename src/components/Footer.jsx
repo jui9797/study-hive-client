@@ -5,7 +5,7 @@ import { AuthContext } from "../provider/AuthProvider";
 const Footer = () => {
     const { isDarkMode } = useContext(AuthContext)
     return (
-        <div className='w-11/12 mx-auto'>
+        <div className=''>
             <footer className={`footer footer-center p-10 rounded ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-[#0AB99D] text-white'
                 }`}>
                 <nav className="grid grid-flow-col gap-4">

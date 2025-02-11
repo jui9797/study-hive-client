@@ -13,6 +13,8 @@ import UpdateAssignment from "../pages/UpdateAssignment";
 import DetailsPage from "../pages/DetailsPage";
 import Submission from "../pages/Submission";
 import Marks from "../pages/Marks";
+import AboutUs from "../pages/AboutUs";
+import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +37,10 @@ const router = createBrowserRouter([
         {
           path:'/assignments',
           element:<Assignments></Assignments>
+        },
+        {
+          path:'/contact',
+          element:<Contact></Contact>
         },
         {
           path:'/details/:id',

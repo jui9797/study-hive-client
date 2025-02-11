@@ -7,23 +7,26 @@ import { MdDarkMode } from "react-icons/md";
 import Spinner from './Spinner';
 
 
+
 const Navbar = () => {
     const { user, logOut, loading, isDarkMode, toggleTheme } = useContext(AuthContext)
 
     const links = <>
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/assignments'>Assignments</NavLink>
+        <NavLink to='/contact'>Contact Us</NavLink>
         {user && <NavLink to='/pdAssignments'>Pending Assignments</NavLink>}
     </>
 
 
 
     return (
-        <div className='w-11/12 mx-auto fixed top-0 z-50'>
-            <div className={`navbar ${isDarkMode ? 'bg-gray-800 text-white ml-4 md:ml-8 lg:ml-16' : 'bg-base-200 text-gray-700'}`}>
+        <div className='relative bg-[#0AB99D] '>
+        <div className={`fixed top-0 right-0 left-0 z-50 ${isDarkMode ? 'bg-gray-800' : 'bg-[#0AB99D]'}`}>
+            <div className={`navbar w-11/12 mx-auto ${isDarkMode ? 'bg-gray-800 text-white' : ' text-gray-700'}`}>
                 <div className="navbar-start ">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-white">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -39,11 +42,11 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content text-gray-800 bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content text-gray-800 bg-[#0AB99D] rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             {links}
                         </ul>
                     </div>
-                    <a className=" text-xl font-bold italic ">Study<span className={isDarkMode ? 'text-[#0AB99D]' : 'text-[#0AB99D]'}>Hive</span></a>
+                    <a className=" text-xl font-bold italic text-white ">Study<span className={isDarkMode ? 'text-[#0AB99D]' : 'text-gray-700'}>Hive</span></a>
                     {/* theme button */}
                     <button className='border-2 rounded-full p-2 lg:ml-2' onClick={toggleTheme}>
                         {isDarkMode ? <MdLightMode /> : <MdDarkMode />}
@@ -92,7 +95,7 @@ const Navbar = () => {
                                         </ul>
                                     </div>
                                     <div>
-                                        <button onClick={logOut} className='btn p-1  lg:p-2 border-none text-white ml-2 bg-[#0AB99D] rounded-lg'>Log Out</button>
+                                        <button onClick={logOut} className='btn p-1  lg:p-2  text-white ml-2 border-2 border-white rounded-lg bg-transparent'>Log Out</button>
                                     </div>
                                 </div>
                             </>
@@ -100,8 +103,8 @@ const Navbar = () => {
                             <>
                                 {/* user log out div */}
                                 <div className=''>
-                                    <button className='btn p-1 py-1 lg:p-2 border-none text-white ml-2 bg-[#0AB99D] rounded-lg'><Link to='/register'>Register</Link></button>
-                                    <button className='btn p-1 lg:p-2 border-none text-white ml-2 bg-[#0AB99D] rounded-lg'><Link to='/login'>Login</Link></button>
+                                    <button className='btn p-1 py-1 lg:p-2  text-white ml-2 border-2 border-white rounded-lg bg-transparent'><Link to='/register'>Register</Link></button>
+                                    <button className='btn p-1 lg:p-2 text-white ml-2 border-2 border-white rounded-lg bg-transparent'><Link to='/login'>Login</Link></button>
                                 </div>
                             </>
                         )}
@@ -110,6 +113,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

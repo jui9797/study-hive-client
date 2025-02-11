@@ -13,9 +13,10 @@ const Home = () => {
   
     
     return (
-      <div>
+      <>
             <Banner></Banner>
-          <div className='my-10'>
+            <div className='container mx-auto px-4 md:px-6 lg:px-8'>
+            <div className='my-10'>
             <WhyChoose></WhyChoose>
           </div>
           <div className='my-10'>
@@ -27,7 +28,9 @@ const Home = () => {
           <div className='my-10 lg:my-20'>
             <Newsletter></Newsletter>
           </div>
-        </div>
+            </div>
+         
+        </>
     );
 };
 

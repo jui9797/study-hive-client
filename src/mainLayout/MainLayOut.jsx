@@ -12,10 +12,10 @@ const MainLayOut = () => {
         <div>
             <div
 
-                className={isDarkMode ? 'bg-gray-800 overflow-hidden ' : ' overflow-hidden w-11/12 mx-auto'}>
+                className={isDarkMode ? 'bg-gray-800 overflow-hidden ' : ' overflow-hidden'}>
 
                 <Navbar></Navbar>
-                <div className='w-11/12 mx-auto min-h-[80vh]'>
+                <div className='w-full min-h-[80vh]'>
                     <Outlet></Outlet>
                 </div>
                 <Footer></Footer>

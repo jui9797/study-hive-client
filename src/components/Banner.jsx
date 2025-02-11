@@ -1,43 +1,85 @@
-import bannerImg from '../assets/WhatsApp Image 2024-12-24 at 12.41.54_ab8c28da.jpg';
+// Import Swiper React components
+import { Autoplay, Pagination, Scrollbar } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'animate.css';
-import { Link } from 'react-router-dom';
-import { FaArrowRightLong } from "react-icons/fa6";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const Banner = () => {
-    return (
-        <div>
-            <div
-                className="hero  sm:h-full md:h-[400px] lg:h-[500px] mt-10"
-                style={{
-                    backgroundImage: `url(${bannerImg})`,
-
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-
-                }}
-            >
-                <div className=" flex h-full flex-col items-center justify-center text-base-200 text-center py-4 px-4 md:px-8 lg:px-16  mb-10">
-                    <h1
-
-
-                        className=" mb-3 lg:mb-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold animate__animated animate__fadeInDown pt-5"
-                        >
-                        Collaborate, Create, Conquer
-                    </h1>
-                    <p className="italic text-gray-400 text-xs lg:w-2/3 mx-auto text-center mb-4 animate__animated animate__lightSpeedInRight animate__delay-1s">
-                        Level up your learning experience. Create assignments, collaborate with friends, and achieve success together.
-                        Build your skills, share feedback, and achieve academic success—together!
-                    </p>
-                    <button className="btn border-white text-white bg-transparent">
-                        <Link to='/assignments' className="flex items-center">
-                            Explore <FaArrowRightLong className="ml-2" />
-                        </Link>
-                    </button>
-                </div>
+  return (
+    <Swiper
+      // Install Swiper modules
+      modules={[Autoplay, Pagination, Scrollbar]}
+      spaceBetween={50}
+      slidesPerView={1}
+      loop={true}
+      autoplay={{ delay: 3000, disableOnInteraction: false }} // Auto change every 3s
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+    >
+      <SwiperSlide>
+        <div className="hero bg-base-200 dark:bg-dark-background min-h-[80vh] bg-[url('assets/Collaborate-Learn.jpeg')] border-2 border-blue-500 mt-10 lg:mt-16 w-full">
+          <div className="hero-overlay bg-black bg-opacity-60"></div>
+          <div className="hero-content">
+            <div>
+              <h1 className="text-2xl md:text-5xl font-bold text-primary dark:text-white">
+                Collaborate with Friends
+              </h1>
+              <p className="py-6 text-white dark:text-gray-200">
+                Work together with friends on assignments and group projects.
+                Build knowledge through collaboration and teamwork.
+              </p>
+              <button className="btn bg-primary text-white hover:bg-accent">
+                Start Collaborating
+              </button>
             </div>
+          </div>
         </div>
-    );
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div className="hero bg-base-200 dark:bg-dark-background min-h-[80vh] bg-[url('assets/Track-Progress.png')] mt-10 lg:mt-16 w-full">
+          <div className="hero-overlay bg-black bg-opacity-70"></div>
+          <div className="hero-content">
+            <div>
+              <h1 className="text-2xl md:text-5xl font-bold text-primary dark:text-white">
+                Track Your Progress
+              </h1>
+              <p className="py-6 text-white">
+                Monitor your assignments, grades, and milestones. Stay motivated
+                and on track as you achieve your goals.
+              </p>
+              <button className="btn bg-primary text-white hover:bg-accent">
+                View Dashboard
+              </button>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div className="hero bg-base-200 dark:bg-dark-background min-h-[80vh] bg-[url('assets/Engage-Learn.jpg')] mt-10 lg:mt-16 w-full">
+          <div className="hero-overlay bg-black bg-opacity-60 pointer-events-none"></div>
+          <div className="hero-content">
+            <div>
+              <h1 className="text-2xl md:text-5xl font-bold text-primary dark:text-white">
+                Engage & Learn
+              </h1>
+              <p className="py-6 text-white">
+                Take part in interactive learning sessions and discussions.
+                Transform your understanding through active participation.
+              </p>
+              <button className="btn bg-primary text-white hover:bg-accent">
+                Join a Study Group
+              </button>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+    </Swiper>
+  );
 };
 
 export default Banner;
