@@ -59,7 +59,7 @@ const handleSubmit =e=>{
             </div>
 
             {/* contat form */}
-            <div className="hero bg-base-200 min-h-screen my-4">
+            <div className="hero bg-base-200 min-h-screen my-4 lg:my-10">
                 <div className="flex max-w-[80rem] gap-[1rem] p-[1rem] align-top flex-col lg:flex-row-reverse">
                     <div className=" lg:text-left lg: pt-10">
                         <h1 className=" text-3xl lg:text-4xl font-bold text-gray-700">Get in touch with us</h1>
