@@ -56,7 +56,7 @@ const MyAssignments = () => {
                                             submits.map((item, index) =>
                                                 <tr key={index}>
                                                     <th>{index + 1}</th>
-                                                    <td className='font-bold text-gray-400'>{item.title}</td>
+                                                    <td className='font-bold text-gray-600'>{item.title}</td>
                                                     <td className={`${item.status === 'Pending' && 'text-amber-700' || item.status === 'Completed' && 'text-green-800'}`}>{item.status}</td>
                                                     <td>{item.marks}</td>
                                                     <td className={`${item.status === 'Pending' && 'text-amber-700'}`}>{item.obtainedMarks
