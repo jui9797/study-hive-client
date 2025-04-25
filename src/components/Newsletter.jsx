@@ -19,7 +19,7 @@ const Newsletter = () => {
     }
 
     return (
-        <div className={`text-center my-10 lg:my-28 border-2 border-[#0AB99D] rounded-lg p-4 lg:p-8 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-[#2bbda5e5] text-white'
+        <div className={`text-center  border-2 border-[#0AB99D] rounded-lg p-4 lg:p-8 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-[#2bbda5e5] text-white'
             }`}
         >
             <h2 className='font-bold text-3xl lg:text-5xl  mb-2'>Subscribe</h2>

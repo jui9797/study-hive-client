@@ -4,7 +4,7 @@ import { AuthContext } from '../provider/AuthProvider';
 const WhyChoose = () => {
     const {isDarkMode} =useContext(AuthContext)
     return (
-        <div className={`lg:my-20 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-700'}`}>
+        <div className={` ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-700'}`}>
       <h1 className={`text-2xl lg:text-4xl text-center font-bold mb-4 lg:mb-10 ${isDarkMode ? 'text-white' : 'text-gray-700'}`}>
       Why Choose Our Group Study App?
       </h1>

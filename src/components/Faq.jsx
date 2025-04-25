@@ -10,7 +10,7 @@ const Faq = () => {
         <div
             className={`p-6 rounded-lg ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}
         >
-            <h2 className={`text-3xl mb-8 font-bold `}>
+            <h2 className={`text-2xl lg:text-4xl mb-8 lg:mb-12 font-bold text-center`}>
                 Got Questions? We have Got Answers!
             </h2>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
