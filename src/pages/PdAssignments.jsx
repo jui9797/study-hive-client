@@ -64,7 +64,7 @@ const PdAssignments = () => {
                                                     <td>{item.marks}</td>
                                                     <td className={`${item.status === 'Pending' && 'text-amber-500'}`}>{item.obtainedMarks}</td>
                                                     <td>{item.submittedUserName}</td>
-                                                    <td><Link to={`/marks/${item._id}`}><button className='btn join-item  text-white ml-2 bg-[#0AB99D] hover:bg-transparent hover:text-[#0AB99D] hover:border-2 hover:border-[#0AB99D]'>Give Mark</button></Link></td>
+                                                    <td><Link to={`/marks/${item._id}`}><button className='btn join-item  text-white ml-2 bg-[#0AB99D] hover:bg-transparent hover:text-[#0AB99D] hover:border-2 hover:border-[#0AB99D] border-none'>Give Mark</button></Link></td>
                                                 </tr>
                                             )
                                         }
