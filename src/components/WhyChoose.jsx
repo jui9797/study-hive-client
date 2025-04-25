@@ -14,29 +14,29 @@ const WhyChoose = () => {
           Collaborative Learning Process
           </h3>
           
-          <p className="italic text-gray-400">Real-time updates and discussions ensure smooth collaboration.</p>
-          <p className="italic text-gray-400">Real-time updates and discussions ensure smooth collaboration.</p>
+          <p className={` text-gray-400"> ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>Real-time updates and discussions ensure smooth collaboration.</p>
+          <p className={` text-gray-400"> ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>Real-time updates and discussions ensure smooth collaboration.</p>
         </div>
         <div className={`p-4 border-r-4 border-b-4 shadow-xl ${isDarkMode ? 'border-[#0AB99D] bg-gray-700' : 'border-gray-700 hover:bg-green-100'} `}>
           <h3 className={`text-xl lg:text-2xl font-bold mb-4 ${isDarkMode ? 'text-[#0AB99D]' : 'text-[#0AB99D]'}`}>
           Create and Manage Assignments
           </h3>
-          <p className="italic text-gray-400">Seamlessly create assignments with attachments, deadlines, and detailed instructions.</p>
-          <p className="italic text-gray-400">View and track assignment progress all in one place.</p>
+          <p className={` text-gray-400"> ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>Seamlessly create assignments with attachments, deadlines, and detailed instructions.</p>
+          <p className={` text-gray-400"> ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>View and track assignment progress all in one place.</p>
         </div>
         <div className={`p-4 border-r-4 border-b-4 shadow-xl ${isDarkMode ? 'border-[#0AB99D] bg-gray-700' : 'border-gray-700 hover:bg-green-100'} `}>
           <h3 className={`text-xl lg:text-2xl font-bold mb-4 ${isDarkMode ? 'text-[#0AB99D]' : 'text-[#0AB99D]'}`}>
           Complete and Submit Assignments
           </h3>
-          <p className="italic text-gray-400">Submit assignments directly through the platform using text or file uploads.</p>
-          <p className="italic text-gray-400">Receive instant notifications on submission status.</p>
+          <p className={` text-gray-400"> ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>Submit assignments directly through the platform using text or file uploads.</p>
+          <p className={` text-gray-400"> ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>Receive instant notifications on submission status.</p>
         </div>
         <div className={`p-4 border-r-4 border-b-4 shadow-xl ${isDarkMode ? 'border-[#0AB99D] bg-gray-700' : 'border-gray-700 hover:bg-green-100'} `}>
           <h3 className={`text-xl lg:text-2xl font-bold mb-4 ${isDarkMode ? 'text-[#0AB99D]' : 'text-[#0AB99D]'}`}>
           Built-in Communication Tools
           </h3>
-          <p className="italic text-gray-400">Chat and discuss assignments in real time.</p>
-          <p className="italic text-gray-400">Threaded discussions keep conversations organized and focused.</p>
+          <p className={` text-gray-400"> ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>Chat and discuss assignments in real time.</p>
+          <p className={` text-gray-400"> ${isDarkMode ? 'text-gray-200' : 'text-gray-600'}`}>Threaded discussions keep conversations organized and focused.</p>
         </div>
         
       </div>
