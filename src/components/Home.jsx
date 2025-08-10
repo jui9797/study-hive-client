@@ -11,21 +11,16 @@ const Home = () => {
     <>
       <Banner></Banner>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="my-10 lg:my-28">
-          <AboutUs></AboutUs>
-        </div>
-        <div className="my-10 lg:my-28">
-          <WhyChoose></WhyChoose>
-        </div>
-        <div className="my-10 lg:my-28">
-          <AssignmentGrid></AssignmentGrid>
-        </div>
-        <div className="my-10 lg:my-28">
-          <Faq></Faq>
-        </div>
-        <div className="my-10 lg:my-28">
-          <Newsletter></Newsletter>
-        </div>
+        <AboutUs></AboutUs>
+
+        <WhyChoose></WhyChoose>
+
+        <AssignmentGrid></AssignmentGrid>
+
+        <Faq></Faq>
+
+        <Newsletter></Newsletter>
+
         <Reviews></Reviews>
       </div>
     </>

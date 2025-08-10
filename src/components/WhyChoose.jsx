@@ -5,12 +5,12 @@ const WhyChoose = () => {
   const { isDarkMode } = useContext(AuthContext);
   return (
     <div
-      className={` ${
+      className={`my-10 lg:my-32 ${
         isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-700"
       }`}
     >
       <h1
-        className={`text-2xl lg:text-4xl text-center font-bold mb-4 lg:mb-10 ${
+        className={`text-2xl lg:text-[40px] text-center font-bold mb-4 lg:mb-14 ${
           isDarkMode ? "text-white" : "text-gray-700"
         }`}
       >
@@ -18,7 +18,7 @@ const WhyChoose = () => {
       </h1>
       <div className="my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div
-          className={`p-4 border-r-4 border-b-4 shadow-xl ${
+          className={`p-4 border-r-4 border-b-4 shadow-xl rounded-lg ${
             isDarkMode
               ? "border-[#0AB99D] bg-gray-700"
               : "border-gray-700 hover:bg-green-100"
@@ -48,7 +48,7 @@ const WhyChoose = () => {
           </p>
         </div>
         <div
-          className={`p-4 border-r-4 border-b-4 shadow-xl ${
+          className={`p-4 border-r-4 border-b-4 shadow-xl rounded-lg ${
             isDarkMode
               ? "border-[#0AB99D] bg-gray-700"
               : "border-gray-700 hover:bg-green-100"
@@ -78,7 +78,7 @@ const WhyChoose = () => {
           </p>
         </div>
         <div
-          className={`p-4 border-r-4 border-b-4 shadow-xl ${
+          className={`p-4 border-r-4 border-b-4 shadow-xl rounded-lg ${
             isDarkMode
               ? "border-[#0AB99D] bg-gray-700"
               : "border-gray-700 hover:bg-green-100"
@@ -108,7 +108,7 @@ const WhyChoose = () => {
           </p>
         </div>
         <div
-          className={`p-4 border-r-4 border-b-4 shadow-xl ${
+          className={`p-4 border-r-4 border-b-4 shadow-xl rounded-lg ${
             isDarkMode
               ? "border-[#0AB99D] bg-gray-700"
               : "border-gray-700 hover:bg-green-100"

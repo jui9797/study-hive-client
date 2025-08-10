@@ -11,7 +11,6 @@ const Footer = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-        {/* Navigation Links and Description */}
         <div className="flex flex-col items-center md:items-start space-y-3 md:space-y-6">
           <nav className="flex space-x-8 text-lg font-medium">
             <a
@@ -39,7 +38,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Social Icons */}
         <div className="flex space-x-6 text-2xl">
           <a
             href="https://www.facebook.com/TwitterInc/"
@@ -48,7 +46,6 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {/* SVG icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -66,7 +63,6 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {/* SVG icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -84,7 +80,6 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {/* SVG icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -97,7 +92,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright */}
       <div className="mt-8 text-center text-sm text-gray-200 italic">
         © {new Date().getFullYear()} All rights reserved by{" "}
         <span
