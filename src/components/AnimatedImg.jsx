@@ -1,7 +1,6 @@
 const AnimatedImg = ({ imageSrc, alt }) => {
   return (
     <div className="relative w-40 h-40 group cursor-pointer">
-      {/* New Background shape - Pink, more rounded */}
       <div
         className="absolute top-0 left-0 w-28 h-20 bg-pink-400
           rounded-3xl
@@ -15,7 +14,6 @@ const AnimatedImg = ({ imageSrc, alt }) => {
         style={{ clipPath: "ellipse(70% 50% at 50% 50%)" }}
       ></div>
 
-      {/* Existing Background shapes - more visible */}
       <div
         className="absolute top-0 left-0 w-40 h-44 rounded-full
           bg-yellow-300
@@ -42,7 +40,6 @@ const AnimatedImg = ({ imageSrc, alt }) => {
         style={{ clipPath: "ellipse(70% 50% at 50% 50%)" }}
       ></div>
 
-      {/* New additional shape 2: purple ellipse bottom-left */}
       <div
         className="absolute bottom-4 left-1 w-24 h-16 bg-purple-500
           rounded-full
@@ -56,7 +53,6 @@ const AnimatedImg = ({ imageSrc, alt }) => {
         style={{ clipPath: "ellipse(70% 50% at 50% 50%)" }}
       ></div>
 
-      {/* Profile Image */}
       <img
         src={imageSrc}
         alt={alt}

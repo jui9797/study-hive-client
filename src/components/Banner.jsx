@@ -1,8 +1,5 @@
-// Import Swiper React components
 import { Autoplay, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
@@ -11,12 +8,11 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <Swiper
-      // Install Swiper modules
       modules={[Autoplay, Pagination, Scrollbar]}
       spaceBetween={50}
       slidesPerView={1}
       loop={true}
-      autoplay={{ delay: 3000, disableOnInteraction: false }} // Auto change every 3s
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
     >
@@ -29,12 +25,12 @@ const Banner = () => {
                 Boost Your Learning with Study Hive!
               </h1>
               <p className="py-4 text-base-100">
-                A smart way to study—join groups, submit assignments, and support your peers.
+                A smart way to study—join groups, submit assignments, and
+                support your peers.
               </p>
               <button className="relative overflow-hidden rounded-lg bg-[#0AB99D] text-white px-6 py-3  uppercase tracking-wider transition-all duration-300 hover:bg-white hover:text-[#0AB99D] font-bold">
                 <Link to="/assignments">Explore Now</Link>
               </button>
-
             </div>
           </div>
         </div>
@@ -49,7 +45,8 @@ const Banner = () => {
                 Study Smart, Not Alone!
               </h1>
               <p className="py-4 text-base-100">
-                Connect with like-minded learners, share ideas, and make studying more fun and productive.
+                Connect with like-minded learners, share ideas, and make
+                studying more fun and productive.
               </p>
               <button className="relative overflow-hidden rounded-lg bg-[#0AB99D] text-white px-6 py-3  uppercase tracking-wider transition-all duration-300 hover:bg-white hover:text-[#0AB99D] font-bold">
                 <Link to="/contact">Join for Free</Link>
@@ -68,7 +65,8 @@ const Banner = () => {
                 Your Ultimate Group Study Hub!
               </h1>
               <p className="py-4 text-base-100">
-                Create, collaborate, and conquer assignments with friends in an interactive learning environment.
+                Create, collaborate, and conquer assignments with friends in an
+                interactive learning environment.
               </p>
               <button className="relative overflow-hidden rounded-lg bg-[#0AB99D] text-white px-6 py-3  uppercase tracking-wider transition-all duration-300 hover:bg-white hover:text-[#0AB99D] font-bold">
                 <Link to="/assignments">Explore Now</Link>
